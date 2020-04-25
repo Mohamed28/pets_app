@@ -16,9 +16,9 @@ import com.example.pets.models.Employee;
 
 public class LoginActivity extends AppCompatActivity {
 
-    EditText inputLogin, inputPassword;
-    TextView lblRemaningAttempts;
-    Button btnLogin;
+    EditText editLogin, editPassword;
+    TextView textRemaningAttempts;
+    Button buttonLogin;
 //    Employee employee;
 //    EmployeeDAO employeeDAO = new EmployeeDAO(this.getApplicationContext());
     private int counter = 5;
@@ -28,11 +28,11 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
 
-        inputLogin = findViewById(R.id.inputLogin);
-        inputPassword = findViewById(R.id.inputPassword);
-        lblRemaningAttempts = findViewById(R.id.lblRemaningAttempts);
-        btnLogin = findViewById(R.id.btnLogin);
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+        editLogin = findViewById(R.id.editLogin);
+        editPassword = findViewById(R.id.editPassword);
+        textRemaningAttempts = findViewById(R.id.textRemaningAttempts);
+        buttonLogin = findViewById(R.id.buttonLogin);
+        buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Check();
@@ -43,20 +43,20 @@ public class LoginActivity extends AppCompatActivity {
     public void Check() {
 //        TODO sistema de consulta de um employee que retorna um objeto employee
 //         será usado para a validação de acesso
-//        employee = employeeDAO.find(Long.parseLong(inputLogin.getText().toString()));
+//        employee = employeeDAO.find(Long.parseLong(editLogin.getText().toString()));
 //
-        if (inputLogin.getText().toString().equals("admin") && inputPassword.getText().toString().equals("1234")) {
+        if (editLogin.getText().toString().equals("admin") && editPassword.getText().toString().equals("1234")) {
             Toast.makeText(this, "Success Login", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, MainMenulActivity.class);
             startActivity(intent);
 
         } else {
             counter--;
-            lblRemaningAttempts.setText("Número de tentativas restantes: " + String.valueOf(counter));
+            textRemaningAttempts.setText("Número de tentativas restantes: " + String.valueOf(counter));
 
             Toast.makeText(this, "Failed Login", Toast.LENGTH_SHORT).show();
             if (counter == 0) {
-                btnLogin.setEnabled(false);
+                buttonLogin.setEnabled(false);
             }
         }
     }

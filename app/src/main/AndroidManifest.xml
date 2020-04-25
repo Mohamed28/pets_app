@@ -20,5 +20,4 @@
         <activity android:name="com.example.pets.activities.NewEmployeeActivity" />
 
     </application>
-
 </manifest>
