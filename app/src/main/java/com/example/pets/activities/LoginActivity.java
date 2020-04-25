@@ -11,16 +11,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pets.R;
-import com.example.pets.dao.EmployeeDAO;
-import com.example.pets.models.Employee;
 
 public class LoginActivity extends AppCompatActivity {
 
     EditText editLogin, editPassword;
     TextView textRemaningAttempts;
     Button buttonLogin;
-//    Employee employee;
-//    EmployeeDAO employeeDAO = new EmployeeDAO(this.getApplicationContext());
+//    User user;
+//    UserDAO userDAO = new UserDAO(this.getApplicationContext());
     private int counter = 5;
 
     @Override
@@ -41,9 +39,9 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void Check() {
-//        TODO sistema de consulta de um employee que retorna um objeto employee
+//        TODO sistema de consulta de um user que retorna um objeto user
 //         será usado para a validação de acesso
-//        employee = employeeDAO.find(Long.parseLong(editLogin.getText().toString()));
+//        user = userDAO.find(Long.parseLong(editLogin.getText().toString()));
 //
         if (editLogin.getText().toString().equals("admin") && editPassword.getText().toString().equals("1234")) {
             Toast.makeText(this, "Success Login", Toast.LENGTH_SHORT).show();

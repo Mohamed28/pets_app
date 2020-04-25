@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.pets.activities.StartActivity"> <!--aqui é a tela inicial-->
+        <activity android:name="com.example.pets.activities.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -17,7 +17,7 @@
         </activity>
 
         <activity android:name="com.example.pets.activities.LoginActivity" />
-        <activity android:name="com.example.pets.activities.NewEmployeeActivity" />
+        <activity android:name="com.example.pets.activities.NewUserActivity" />
 
     </application>
 </manifest>

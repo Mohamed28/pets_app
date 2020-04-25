@@ -2,7 +2,7 @@ package com.example.pets.models;
 
 import java.io.Serializable;
 
-public class Employee implements Serializable {
+public class User implements Serializable {
 
     private Integer id;
     private String name;
@@ -11,7 +11,7 @@ public class Employee implements Serializable {
     private long phone;
     private final long CPF;
 
-    public Employee(String name, String surname, long CPF, String password, long phone) {
+    public User(String name, String surname, long CPF, String password, long phone) {
         this.name = name;
         this.CPF = CPF;
         this.surname = surname;

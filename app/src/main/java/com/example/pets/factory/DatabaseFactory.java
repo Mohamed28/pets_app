@@ -18,16 +18,16 @@ public class DatabaseFactory extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase database) {
-        createTableEmployee(database);
+        createTableUser(database);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion) {
-        dropTableDropEmployee(database);
+        dropTableDropUser(database);
     }
 
-    public void createTableEmployee(SQLiteDatabase database) {
-        String sql = "CREATE TABLE employee(" +
+    public void createTableUser(SQLiteDatabase database) {
+        String sql = "CREATE TABLE user(" +
                 "id integer primary key autoincrement," +
                 "nome varchar(25), " +
                 "sobrenome varchar(25), " +
@@ -37,8 +37,8 @@ public class DatabaseFactory extends SQLiteOpenHelper {
         database.execSQL(sql);
     }
 
-    public void dropTableDropEmployee(SQLiteDatabase database) {
-        String sql = "DROP TABLE IF EXISTS employee";
+    public void dropTableDropUser(SQLiteDatabase database) {
+        String sql = "DROP TABLE IF EXISTS user";
         database.execSQL(sql);
     }
 }
