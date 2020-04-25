@@ -8,7 +8,7 @@
     tools:context=".activities.NewEmployeeActivity">
 
     <ImageButton
-        android:id="@+id/btnBack"
+        android:id="@+id/buttonBack"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
@@ -24,7 +24,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/lblView"
+        android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginStart="44dp"
@@ -40,7 +40,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/scrollView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnBack"
+        app:layout_constraintStart_toEndOf="@+id/buttonBack"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
@@ -64,7 +64,7 @@
             android:paddingRight="45dp">
 
             <TextView
-                android:id="@+id/lblName"
+                android:id="@+id/textName"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -74,7 +74,7 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/inputName"
+                android:id="@+id/editName"
                 style="@style/Widget.AppCompat.AutoCompleteTextView"
                 android:layout_width="200dp"
                 android:layout_height="40dp"
@@ -88,7 +88,7 @@
                 android:textColor="@color/colorTextSecondary" />
 
             <TextView
-                android:id="@+id/lblSurname"
+                android:id="@+id/textSurname"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -98,7 +98,7 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/inputSurname"
+                android:id="@+id/editSurname"
                 style="@style/Widget.AppCompat.AutoCompleteTextView"
                 android:layout_width="200dp"
                 android:layout_height="40dp"
@@ -112,7 +112,7 @@
                 android:textColor="@color/colorTextSecondary" />
 
             <TextView
-                android:id="@+id/lblCPF"
+                android:id="@+id/textCPF"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -122,7 +122,7 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/inputCPF"
+                android:id="@+id/editCPF"
                 style="@style/Widget.AppCompat.AutoCompleteTextView"
                 android:layout_width="200dp"
                 android:layout_height="40dp"
@@ -136,7 +136,7 @@
                 android:textColor="@color/colorTextSecondary" />
 
             <TextView
-                android:id="@+id/lblPassword"
+                android:id="@+id/textPassword"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -146,7 +146,7 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/inputPassword"
+                android:id="@+id/editPassword"
                 style="@style/Widget.AppCompat.AutoCompleteTextView"
                 android:layout_width="200dp"
                 android:layout_height="40dp"
@@ -160,7 +160,7 @@
                 android:textColor="@color/colorTextSecondary" />
 
             <TextView
-                android:id="@+id/lblPhone"
+                android:id="@+id/textPhone"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -170,7 +170,7 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/inputPhone"
+                android:id="@+id/editPhone"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="25dp"
@@ -186,7 +186,7 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/btnSalvar"
+        android:id="@+id/buttonSalvar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"

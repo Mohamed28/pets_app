@@ -19,11 +19,11 @@ import java.util.List;
 import java.util.Set;
 
 public class NewEmployeeActivity extends AppCompatActivity {
-    private EditText inputName;
-    private EditText inputSurname;
-    private EditText inputCPF;
-    private EditText inputPassword;
-    private EditText inputPhone;
+    private EditText editName;
+    private EditText editSurname;
+    private EditText editCPF;
+    private EditText editPassword;
+    private EditText editPhone;
     private EmployeeDAO employeeDAO;
 
     @Override
@@ -36,18 +36,18 @@ public class NewEmployeeActivity extends AppCompatActivity {
 
     public void save(View view) {
         try {
-            inputName = findViewById(R.id.inputName);
-            inputSurname = findViewById(R.id.inputSurname);
-            inputCPF = findViewById(R.id.inputCPF);
-            inputPassword = findViewById(R.id.inputPassword);
-            inputPhone = findViewById(R.id.inputPhone);
+            editName = findViewById(R.id.editName);
+            editSurname = findViewById(R.id.editSurname);
+            editCPF = findViewById(R.id.editCPF);
+            editPassword = findViewById(R.id.editPassword);
+            editPhone = findViewById(R.id.editPhone);
 
             employeeDAO.insert(new Employee(
-                    inputName.getText().toString(),
-                    inputSurname.getText().toString(),
-                    Long.parseLong(inputCPF.getText().toString()),
-                    inputPassword.getText().toString(),
-                    Long.parseLong(inputPhone.getText().toString()))
+                    editName.getText().toString(),
+                    editSurname.getText().toString(),
+                    Long.parseLong(editCPF.getText().toString()),
+                    editPassword.getText().toString(),
+                    Long.parseLong(editPhone.getText().toString()))
             );
 
             Toast.makeText(this, "Novo funcionário inserido com sucesso!", Toast.LENGTH_SHORT).show();

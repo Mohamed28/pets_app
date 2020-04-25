@@ -8,7 +8,7 @@
     tools:context=".activities.LoginActivity">
 
     <ImageButton
-        android:id="@+id/btnBack"
+        android:id="@+id/buttonBack"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
@@ -24,7 +24,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/inputLogin"
+        android:id="@+id/editLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -43,7 +43,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/inputPassword"
+        android:id="@+id/editPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -59,10 +59,10 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/editLogin" />
 
     <TextView
-        android:id="@+id/lblRemaningAttempts"
+        android:id="@+id/textRemaningAttempts"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -76,10 +76,10 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/editPassword" />
 
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/buttonLogin"
         android:layout_width="200dp"
         android:layout_height="60dp"
         android:layout_centerHorizontal="true"
@@ -95,6 +95,6 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblRemaningAttempts" />
+        app:layout_constraintTop_toBottomOf="@+id/textRemaningAttempts" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
