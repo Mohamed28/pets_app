@@ -1,4 +1,4 @@
-# pets_app README
+# README
 
 #### Github
 ##### Create cache for credentials
