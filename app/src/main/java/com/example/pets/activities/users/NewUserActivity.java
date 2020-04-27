@@ -1,47 +1,48 @@
-package com.example.pets.activities;
+package com.example.pets.activities.users;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.pets.R;
-import com.example.pets.dao.UserDAO;
+import com.example.pets.activities.StartActivity;
+import com.example.pets.daos.UserDAO;
 import com.example.pets.models.User;
 
 public class NewUserActivity extends AppCompatActivity {
-    private EditText editName;
-    private EditText editSurname;
-    private EditText editCPF;
-    private EditText editPassword;
-    private EditText editPhone;
+    private EditText editName, editSurname, editCPF, editPassword, editPhone;
+    private CheckBox checkAdmin;
     private UserDAO userDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.new_user_activity);
+        editName = findViewById(R.id.editName);
+        editSurname = findViewById(R.id.editSurname);
+        editCPF = findViewById(R.id.editCPF);
+        editPassword = findViewById(R.id.editPassword);
+        editPhone = findViewById(R.id.editPhone);
+        checkAdmin = findViewById(R.id.checkAdmin);
+        userDAO = new UserDAO(this);
     }
 
     // TODO meétodo para escurecer o fundo do input quando este estive com focus
 
     public void save(View view) {
         try {
-            editName = findViewById(R.id.editName);
-            editSurname = findViewById(R.id.editSurname);
-            editCPF = findViewById(R.id.editCPF);
-            editPassword = findViewById(R.id.editPassword);
-            editPhone = findViewById(R.id.editPhone);
-
             userDAO.insert(new User(
                     editName.getText().toString(),
                     editSurname.getText().toString(),
                     Long.parseLong(editCPF.getText().toString()),
                     editPassword.getText().toString(),
-                    Long.parseLong(editPhone.getText().toString()))
+                    Long.parseLong(editPhone.getText().toString()),
+                    checkAdmin.isChecked())
             );
 
             Toast.makeText(this, "Novo funcionário inserido com sucesso!", Toast.LENGTH_SHORT).show();

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorSecondary"
-    tools:context=".activities.NewUserActivity">
+    tools:context=".activities.users.NewUserActivity">
 
     <ImageButton
         android:id="@+id/buttonBack"
@@ -27,21 +27,23 @@
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="40dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginLeft="44dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="16dp"
         android:gravity="center_vertical|center_horizontal"
-        android:text="@string/subscribe"
+        android:text="@string/new_user"
         android:textColor="@color/colorPrimary"
-        android:textSize="36sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/scrollView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/buttonBack"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ScrollView
         android:id="@+id/scrollView"
@@ -51,17 +53,20 @@
         android:layout_marginBottom="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="25dp"
             android:gravity="center"
             android:orientation="vertical"
-            android:paddingLeft="45dp"
-            android:paddingRight="45dp">
+            android:paddingLeft="44dp"
+            android:paddingTop="24dp"
+            android:paddingRight="44dp"
+            android:paddingBottom="24dp">
 
             <TextView
                 android:id="@+id/textName"
@@ -75,17 +80,16 @@
 
             <EditText
                 android:id="@+id/editName"
-                style="@style/Widget.AppCompat.AutoCompleteTextView"
                 android:layout_width="200dp"
                 android:layout_height="40dp"
                 android:layout_marginBottom="25dp"
                 android:width="200dp"
                 android:autofillHints="true"
-                android:background="@android:color/transparent"
+                android:background="@drawable/edit_rounded_border"
                 android:inputType="textPersonName"
                 android:padding="5dp"
                 android:singleLine="true"
-                android:textColor="@color/colorTextSecondary" />
+                android:textColor="@color/colorTextPrimary" />
 
             <TextView
                 android:id="@+id/textSurname"
@@ -99,17 +103,16 @@
 
             <EditText
                 android:id="@+id/editSurname"
-                style="@style/Widget.AppCompat.AutoCompleteTextView"
                 android:layout_width="200dp"
                 android:layout_height="40dp"
                 android:layout_marginBottom="25dp"
                 android:width="200dp"
                 android:autofillHints="true"
-                android:background="@android:color/transparent"
+                android:background="@drawable/edit_rounded_border"
                 android:inputType="textPersonName"
                 android:padding="5dp"
                 android:singleLine="true"
-                android:textColor="@color/colorTextSecondary" />
+                android:textColor="@color/colorTextPrimary" />
 
             <TextView
                 android:id="@+id/textCPF"
@@ -123,17 +126,16 @@
 
             <EditText
                 android:id="@+id/editCPF"
-                style="@style/Widget.AppCompat.AutoCompleteTextView"
                 android:layout_width="200dp"
                 android:layout_height="40dp"
                 android:layout_marginBottom="25dp"
                 android:width="200dp"
                 android:autofillHints="true"
-                android:background="@android:color/transparent"
+                android:background="@drawable/edit_rounded_border"
                 android:inputType="number"
                 android:padding="5dp"
                 android:singleLine="true"
-                android:textColor="@color/colorTextSecondary" />
+                android:textColor="@color/colorTextPrimary" />
 
             <TextView
                 android:id="@+id/textPassword"
@@ -147,17 +149,16 @@
 
             <EditText
                 android:id="@+id/editPassword"
-                style="@style/Widget.AppCompat.AutoCompleteTextView"
                 android:layout_width="200dp"
                 android:layout_height="40dp"
                 android:layout_marginBottom="25dp"
                 android:width="200dp"
                 android:autofillHints="true"
-                android:background="@android:color/transparent"
+                android:background="@drawable/edit_rounded_border"
                 android:inputType="textPassword"
                 android:padding="5dp"
                 android:singleLine="true"
-                android:textColor="@color/colorTextSecondary" />
+                android:textColor="@color/colorTextPrimary" />
 
             <TextView
                 android:id="@+id/textPhone"
@@ -176,11 +177,36 @@
                 android:layout_marginBottom="25dp"
                 android:width="200dp"
                 android:autofillHints="true"
-                android:background="@android:color/transparent"
+                android:background="@drawable/edit_rounded_border"
                 android:inputType="phone"
                 android:padding="5dp"
                 android:singleLine="true"
-                android:textColor="@color/colorTextSecondary" />
+                android:textColor="@color/colorTextPrimary" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkAdmin"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_rounded_border"
+                    android:checked="false"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/textAdmin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_weight="1"
+                    android:text="@string/admin"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
@@ -194,7 +220,7 @@
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
         android:layout_marginBottom="32dp"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/button_rounded_border_primary"
         android:onClick="save"
         android:text="@string/save"
         android:textColor="@color/colorSecondary"

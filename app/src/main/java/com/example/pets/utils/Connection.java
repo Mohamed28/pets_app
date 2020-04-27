@@ -1,9 +1,9 @@
-package com.example.pets.util;
+package com.example.pets.utils;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.pets.factory.DatabaseFactory;
+import com.example.pets.factories.DatabaseFactory;
 
 public class Connection {
 

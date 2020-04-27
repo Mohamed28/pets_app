@@ -9,14 +9,19 @@ public class User implements Serializable {
     private String surname;
     private String password;
     private long phone;
-    private final long CPF;
+    private long CPF;
+    private boolean admin;
 
-    public User(String name, String surname, long CPF, String password, long phone) {
+    public User() {
+    }
+
+    public User(String name, String surname, long CPF, String password, long phone, boolean admin) {
         this.name = name;
         this.CPF = CPF;
         this.surname = surname;
         this.password = password;
         this.phone = phone;
+        this.admin = admin;
     }
 
     public Integer getId() {
@@ -59,7 +64,20 @@ public class User implements Serializable {
         this.phone = phone;
     }
 
-    public long getCPF(){
+    public long getCPF() {
         return CPF;
     }
+
+    public void setCPF(long CPF) {
+        this.CPF = CPF;
+    }
+
+    public boolean getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
+    }
+
 }

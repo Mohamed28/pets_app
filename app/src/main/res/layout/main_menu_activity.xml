@@ -7,17 +7,79 @@
     android:background="@color/colorSecondary"
     tools:context=".activities.MainMenulActivity">
 
+    <TextView
+        android:id="@+id/textPets"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textColor="@color/colorSecondary"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="72dp"
+        android:background="@drawable/pets_background"
+        android:padding="72dp"
+        android:paddingLeft="48dp"
+        android:paddingRight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageButton
+                    android:id="@+id/buttonUsers"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_margin="16dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/button_rounded_border_primary"
+                    android:onClick="goToUsers"
+                    android:scaleType="fitCenter"
+                    android:src="@android:drawable/ic_input_add"
+                    android:tint="@color/colorSecondary"
+                    tools:src="@android:drawable/ic_input_add" />
+
+                <ImageButton
+                    android:id="@+id/buttonClients"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_margin="16dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/button_rounded_border_primary"
+                    android:onClick="goToNewUser"
+                    android:scaleType="fitCenter"
+                    android:tint="@color/colorSecondary"
+                    app:srcCompat="@android:drawable/ic_input_add"
+                    tools:srcCompat="@android:drawable/ic_input_add" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </TableLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
