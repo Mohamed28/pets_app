@@ -20,6 +20,8 @@
         <activity android:name=".activities.MainMenulActivity" />
         <activity android:name=".activities.users.NewUserActivity" />
         <activity android:name=".activities.users.UsersActivity" />
+        <activity android:name=".activities.clients.ClientsActivity"></activity>
+        <activity android:name=".activities.clients.NewClientActivity"></activity>
     </application>
 
 </manifest>
