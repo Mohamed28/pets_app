@@ -21,8 +21,4 @@ public class MainMenulActivity extends AppCompatActivity {
     public void goToUsers(View view) {
         startActivity(new Intent(this, UsersActivity.class));
     }
-
-    public void goToNewUser(View view) {
-        startActivity(new Intent(this, NewUserActivity.class));
-    }
 }

@@ -3,6 +3,7 @@ package com.example.pets.activities.users;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -13,6 +14,7 @@ import com.example.pets.activities.MainMenulActivity;
 import com.example.pets.daos.UserDAO;
 import com.example.pets.models.User;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UsersActivity extends AppCompatActivity {
@@ -25,9 +27,17 @@ public class UsersActivity extends AppCompatActivity {
         ListView listUsers = findViewById(R.id.listUsers);
         UserDAO userDAO = new UserDAO(this);
         List<User> users = userDAO.list();
+        String[] testes = {"Teste_1", "Teste_2", "Teste_3", "Teste_4", "Teste_5"};
 
-        ArrayAdapter<User> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, users);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, testes);
         listUsers.setAdapter(adapter);
+
+        listUsers.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+        });
     }
 
     public void back(View view) {
