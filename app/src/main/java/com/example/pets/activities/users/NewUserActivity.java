@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.pets.R;
-import com.example.pets.activities.StartActivity;
+import com.example.pets.activities.MainMenuActivity;
 import com.example.pets.daos.UserDAO;
 import com.example.pets.models.User;
 
@@ -51,10 +51,10 @@ public class NewUserActivity extends AppCompatActivity {
             Toast.makeText(this, "Falha ao tentar gravar dados, verifique os dados e tente novamente", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this, NewUserActivity.class));
         }
-        startActivity(new Intent(this, StartActivity.class));
+        startActivity(new Intent(this, MainMenuActivity.class));
     }
 
     public void back(View view) {
-        startActivity(new Intent(this, StartActivity.class));
+        startActivity(new Intent(this, UsersActivity.class));
     }
 }

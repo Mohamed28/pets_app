@@ -10,7 +10,7 @@ import com.example.pets.R;
 import com.example.pets.activities.users.NewUserActivity;
 import com.example.pets.activities.users.UsersActivity;
 
-public class MainMenulActivity extends AppCompatActivity {
+public class MainMenuActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,9 +20,5 @@ public class MainMenulActivity extends AppCompatActivity {
 
     public void goToUsers(View view) {
         startActivity(new Intent(this, UsersActivity.class));
-    }
-
-    public void goToNewUser(View view) {
-        startActivity(new Intent(this, NewUserActivity.class));
     }
 }
