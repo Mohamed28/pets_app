@@ -41,11 +41,10 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/buttonBack"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="UnknownIdInLayout" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <ListView
-        android:id="@+id/listUsers"
+        android:id="@+id/listClients"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_marginTop="72dp"

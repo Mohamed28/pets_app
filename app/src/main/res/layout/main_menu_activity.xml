@@ -69,7 +69,7 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
                     android:background="@drawable/button_rounded_border_primary"
-                    android:onClick="goToNewUser"
+                    android:onClick="goToClients"
                     android:scaleType="fitCenter"
                     android:tint="@color/colorSecondary"
                     app:srcCompat="@android:drawable/ic_input_add"

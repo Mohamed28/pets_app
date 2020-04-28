@@ -17,6 +17,7 @@ public class DatabaseFactory extends SQLiteOpenHelper {
     public DatabaseFactory(@Nullable Context context) {
         super(context, DATABASE_NAME, null, VERSION);
         this.context = context;
+        context.deleteDatabase(DATABASE_NAME);
     }
 
     @Override
@@ -45,6 +46,7 @@ public class DatabaseFactory extends SQLiteOpenHelper {
         } catch (SQLiteException e) {
             close();
             context.deleteDatabase(DATABASE_NAME);
+            e.printStackTrace();
         }
     }
 
@@ -54,13 +56,19 @@ public class DatabaseFactory extends SQLiteOpenHelper {
     }
 
     private void createTableClient(SQLiteDatabase database) {
-        String sql = "CREATE TABLE user(" +
-                "id integer primary key autoincrement," +
-                "nome varchar(25) not null, " +
-                "sobrenome varchar(25) not null," +
-                "cpf bigint not null unique, " +
-                "email varchar(50) unique)";
-        database.execSQL(sql);
+        try{
+            String sql = "CREATE TABLE IF NOT EXISTS client (" +
+                    "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    "name VARCHAR(25) NOT NULL, " +
+                    "surname VARCHAR(25) NOT NULL," +
+                    "cpf bigint NOT NULL UNIQUE, " +
+                    "email varchar(50) UNIQUE)";
+            database.execSQL(sql);
+        } catch (SQLiteException e){
+            close();
+            context.deleteDatabase(DATABASE_NAME);
+            e.printStackTrace();
+        }
     }
 
     private void dropTableDropClient(SQLiteDatabase database) {

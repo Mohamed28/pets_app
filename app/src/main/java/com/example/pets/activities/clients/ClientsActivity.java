@@ -3,13 +3,14 @@ package com.example.pets.activities.clients;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pets.R;
-import com.example.pets.activities.MainMenulActivity;
+import com.example.pets.activities.MainMenuActivity;
 import com.example.pets.daos.ClientDAO;
 import com.example.pets.models.Client;
 
@@ -28,10 +29,17 @@ public class ClientsActivity extends AppCompatActivity {
 
         ArrayAdapter<Client> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, clients);
         listClients.setAdapter(adapter);
+
+        listClients.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+        });
     }
 
     public void back(View view) {
-        startActivity(new Intent(this, MainMenulActivity.class));
+        startActivity(new Intent(this, MainMenuActivity.class));
     }
 
     public void add(View view) {
