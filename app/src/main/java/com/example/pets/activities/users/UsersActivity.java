@@ -26,9 +26,7 @@ public class UsersActivity extends AppCompatActivity {
         ListView listUsers = findViewById(R.id.listUsers);
         UserDAO userDAO = new UserDAO(this);
         List<User> users = userDAO.list();
-        String[] testes = {"Teste_1", "Teste_2", "Teste_3", "Teste_4", "Teste_5"};
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, testes);
+        ArrayAdapter<User> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, users);
         listUsers.setAdapter(adapter);
 
         listUsers.setOnItemClickListener(new AdapterView.OnItemClickListener() {

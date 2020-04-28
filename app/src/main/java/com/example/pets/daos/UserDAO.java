@@ -5,21 +5,17 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
-import android.os.Build;
-
-import androidx.annotation.RequiresApi;
 
 import com.example.pets.factories.DatabaseFactory;
 import com.example.pets.models.User;
 import com.example.pets.utils.Connection;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class UserDAO {
 
-    SQLiteDatabase database;
+    private SQLiteDatabase database;
 
     public UserDAO(Context context) {
         database = Connection.getInstance(context);

@@ -45,8 +45,7 @@ public class DatabaseFactory extends SQLiteOpenHelper {
                 "admin INTEGER NOT NULL DEFAULT 0)";
             database.execSQL(sql);
         } catch (SQLiteException e) {
-            close();
-            context.deleteDatabase(DATABASE_NAME);
+            e.printStackTrace();
         }
     }
 
