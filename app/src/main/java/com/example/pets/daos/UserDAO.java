@@ -21,41 +21,21 @@ public class UserDAO {
 
     SQLiteDatabase database;
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public UserDAO(Context context) {
         database = Connection.getInstance(context);
-        User seed = new User("Teste_1", "Teste_2", 11122233345L, "12345", 11900001111L, true);
-        insert(seed);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void insert(User user) {
-        ContentValues values = new ContentValues();
-        values.put("name", user.getName());
-        values.put("surname", user.getSurname());
-        values.put("CPF", user.getCPF());
-        values.put("password", user.getPassword());
-        values.put("phone", user.getPhone());
-        values.put("admin", Boolean.compare(user.getAdmin(), false));
-
-
-        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-        System.out.println(user);
-        System.out.println(values);
-        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-
         try {
+            ContentValues values = new ContentValues();
+            values.put("name", user.getName());
+            values.put("surname", user.getSurname());
+            values.put("CPF", user.getCPF());
+            values.put("password", user.getPassword());
+            values.put("phone", user.getPhone());
+            values.put("admin", user.getAdmin());
             database.insert("user", null, values);
-
         } catch (SQLiteException e) {
-            System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-            System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-            System.out.println(user);
-            System.out.println(values);
-            System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-            System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
             e.printStackTrace();
         }
     }

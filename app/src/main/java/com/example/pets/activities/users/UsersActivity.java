@@ -10,11 +10,10 @@ import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pets.R;
-import com.example.pets.activities.MainMenulActivity;
+import com.example.pets.activities.MainMenuActivity;
 import com.example.pets.daos.UserDAO;
 import com.example.pets.models.User;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class UsersActivity extends AppCompatActivity {
@@ -41,7 +40,7 @@ public class UsersActivity extends AppCompatActivity {
     }
 
     public void back(View view) {
-        startActivity(new Intent(this, MainMenulActivity.class));
+        startActivity(new Intent(this, MainMenuActivity.class));
     }
 
     public void add(View view) {

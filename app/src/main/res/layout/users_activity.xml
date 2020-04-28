@@ -46,15 +46,13 @@
 
     <ListView
         android:id="@+id/listUsers"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_marginTop="72dp"
-        android:background="@drawable/pets_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-    </ListView>
+        app:layout_constraintTop_toBottomOf="@+id/textUsers"></ListView>
 
     <ImageView
         android:id="@+id/buttonAdd"
@@ -63,8 +61,8 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
-        android:onClick="add"
         android:background="@drawable/button_circle_primary"
+        android:onClick="add"
         android:tint="@color/colorSecondary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

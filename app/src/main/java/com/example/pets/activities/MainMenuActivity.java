@@ -10,7 +10,7 @@ import com.example.pets.R;
 import com.example.pets.activities.users.NewUserActivity;
 import com.example.pets.activities.users.UsersActivity;
 
-public class MainMenulActivity extends AppCompatActivity {
+public class MainMenuActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

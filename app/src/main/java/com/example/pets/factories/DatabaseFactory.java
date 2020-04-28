@@ -34,17 +34,15 @@ public class DatabaseFactory extends SQLiteOpenHelper {
     }
 
     public void createTableUser(SQLiteDatabase database) {
-        context.deleteDatabase(DATABASE_NAME);
-
-        String sql = "CREATE TABLE user (" +
-                "id integer primary key autoincrement," +
-                "name varchar(25) not null," +
-                "surname varchar(25) not null," +
-                "CPF bigint not null unique, " +
-                "password varchar(8) not null, " +
-                "phone bigint unique," +
-                "admin integer not null default 0)";
         try {
+        String sql = "CREATE TABLE IF NOT EXISTS user (" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "name VARCHAR(25) NOT NULL," +
+                "surname VARCHAR(25) NOT NULL," +
+                "CPF BIGINT NOT NULL UNIQUE, " +
+                "password VARCHAR(8) NOT NULL, " +
+                "phone BIGINT UNIQUE," +
+                "admin INTEGER NOT NULL DEFAULT 0)";
             database.execSQL(sql);
         } catch (SQLiteException e) {
             close();
