@@ -25,61 +25,58 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="72dp"
         android:background="@drawable/pets_background"
-        android:padding="72dp"
-        android:paddingLeft="48dp"
-        android:paddingRight="48dp"
+        android:padding="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <ImageButton
+            android:id="@+id/buttonUsers"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginBottom="544dp"
+            android:background="@drawable/users"
+            android:onClick="goToUsers"
+            android:scaleType="fitCenter"
+            android:tint="@color/colorSecondary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/buttonClients"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center">
+        <ImageButton
+            android:id="@+id/buttonClients"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="16dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginBottom="544dp"
+            android:background="@drawable/clients"
+            android:onClick="goToNewUser"
+            android:scaleType="fitCenter"
+            android:tint="@color/colorSecondary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/buttonUsers"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <ImageButton
-                    android:id="@+id/buttonUsers"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:layout_margin="16dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:background="@drawable/button_rounded_border_primary"
-                    android:onClick="goToUsers"
-                    android:scaleType="fitCenter"
-                    android:src="@android:drawable/ic_input_add"
-                    android:tint="@color/colorSecondary"
-                    tools:src="@android:drawable/ic_input_add" />
-
-                <ImageButton
-                    android:id="@+id/buttonClients"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:layout_margin="16dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:background="@drawable/button_rounded_border_primary"
-                    android:onClick="goToNewUser"
-                    android:scaleType="fitCenter"
-                    android:tint="@color/colorSecondary"
-                    app:srcCompat="@android:drawable/ic_input_add"
-                    tools:srcCompat="@android:drawable/ic_input_add" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </TableLayout>
-    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

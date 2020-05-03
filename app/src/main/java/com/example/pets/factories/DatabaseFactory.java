@@ -4,21 +4,14 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.Toast;
-
-import androidx.annotation.Nullable;
-
-import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
 
 public class DatabaseFactory extends SQLiteOpenHelper {
-    private static final String DATABASE_NAME = "pets_app.db";
-    private static final int VERSION = 1;
-    public static final String[] USER_COLUMNS = {"id", "name", "surname", "CPF", "password", "phone", "admin"};
+    public static final String DATABASE_NAME = "pets_app.db";
+    public static final int VERSION = 1;
+    public static final String[] USER_COLUMNS = {"id", "name", "surname", "CPF", "password", "phone", "role", "admin"};
     private Context context;
 
-    public DatabaseFactory(@Nullable Context context) {
+    public DatabaseFactory(Context context) {
         super(context, DATABASE_NAME, null, VERSION);
         this.context = context;
     }
@@ -42,6 +35,7 @@ public class DatabaseFactory extends SQLiteOpenHelper {
                 "CPF BIGINT NOT NULL UNIQUE, " +
                 "password VARCHAR(8) NOT NULL, " +
                 "phone BIGINT UNIQUE," +
+                "role TINYINT," +
                 "admin INTEGER NOT NULL DEFAULT 0)";
             database.execSQL(sql);
         } catch (SQLiteException e) {

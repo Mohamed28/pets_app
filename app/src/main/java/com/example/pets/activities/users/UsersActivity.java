@@ -3,38 +3,36 @@ package com.example.pets.activities.users;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pets.R;
 import com.example.pets.activities.MainMenuActivity;
 import com.example.pets.daos.UserDAO;
 import com.example.pets.models.User;
+import com.example.pets.utils.RecyclerViewAdapter;
 
 import java.util.List;
 
 public class UsersActivity extends AppCompatActivity {
+
+    private RecyclerView recyclerListUsers;
+    private UserDAO userDAO;
+    private List<User> users;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.users_activity);
 
-        ListView listUsers = findViewById(R.id.listUsers);
-        UserDAO userDAO = new UserDAO(this);
-        List<User> users = userDAO.list();
-        ArrayAdapter<User> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, users);
-        listUsers.setAdapter(adapter);
+        userDAO = new UserDAO(this);
+        users = userDAO.list();
 
-        listUsers.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-            }
-        });
+        recyclerListUsers = findViewById(R.id.recyclerListUsers);
+        recyclerListUsers.setAdapter(new RecyclerViewAdapter(this, users));
+        recyclerListUsers.setLayoutManager(new LinearLayoutManager(this));
     }
 
     public void back(View view) {

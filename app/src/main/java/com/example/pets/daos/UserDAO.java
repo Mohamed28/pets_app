@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 
+import com.example.pets.daos.seeds.UsersSeeds;
 import com.example.pets.factories.DatabaseFactory;
 import com.example.pets.models.User;
 import com.example.pets.utils.Connection;
@@ -19,6 +20,7 @@ public class UserDAO {
 
     public UserDAO(Context context) {
         database = Connection.getInstance(context);
+        UsersSeeds.install(this);
     }
 
     public void insert(User user) {
@@ -29,7 +31,8 @@ public class UserDAO {
             values.put("CPF", user.getCPF());
             values.put("password", user.getPassword());
             values.put("phone", user.getPhone());
-            values.put("admin", user.getAdmin());
+            values.put("role", user.getRole());
+            values.put("admin", user.isAdmin());
             database.insert("user", null, values);
         } catch (SQLiteException e) {
             e.printStackTrace();
@@ -48,7 +51,8 @@ public class UserDAO {
             user.setCPF(cursor.getLong(3));
             user.setPassword(cursor.getString(4));
             user.setPhone(cursor.getLong(5));
-            user.setAdmin((cursor.getInt(0) == 1));
+            user.setRole(cursor.getInt(6));
+            user.setAdmin((cursor.getInt(7) == 1));
             users.add(user);
         }
 
@@ -58,5 +62,4 @@ public class UserDAO {
     public User find(long cpf) {
         return null;
     }
-
 }

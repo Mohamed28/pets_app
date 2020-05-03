@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorSecondary"
+    android:background="@color/colorPrimary"
     tools:context=".activities.users.NewUserActivity">
 
     <ImageButton
@@ -18,7 +18,7 @@
         android:background="@android:color/transparent"
         android:onClick="back"
         android:src="?attr/actionModeCloseDrawable"
-        android:tint="@color/colorPrimary"
+        android:tint="@color/colorSecondary"
         app:layout_constraintBottom_toTopOf="@+id/scrollView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,7 +35,7 @@
         android:layout_marginBottom="16dp"
         android:gravity="center_vertical|center_horizontal"
         android:text="@string/new_user"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/colorSecondary"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/scrollView"
@@ -51,6 +51,9 @@
         android:layout_height="match_parent"
         android:layout_marginTop="72dp"
         android:layout_marginBottom="100dp"
+        android:background="@color/colorSecondary"
+        android:paddingLeft="45dp"
+        android:paddingRight="45dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -60,17 +63,15 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical"
-            android:paddingLeft="44dp"
             android:paddingTop="24dp"
-            android:paddingRight="44dp"
             android:paddingBottom="24dp">
 
             <TextView
                 android:id="@+id/textName"
-                android:layout_width="200dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:gravity="center"
@@ -80,7 +81,7 @@
 
             <EditText
                 android:id="@+id/editName"
-                android:layout_width="200dp"
+                android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginBottom="25dp"
                 android:width="200dp"
@@ -93,7 +94,7 @@
 
             <TextView
                 android:id="@+id/textSurname"
-                android:layout_width="200dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:gravity="center"
@@ -103,7 +104,7 @@
 
             <EditText
                 android:id="@+id/editSurname"
-                android:layout_width="200dp"
+                android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginBottom="25dp"
                 android:width="200dp"
@@ -116,7 +117,7 @@
 
             <TextView
                 android:id="@+id/textCPF"
-                android:layout_width="200dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:gravity="center"
@@ -126,7 +127,7 @@
 
             <EditText
                 android:id="@+id/editCPF"
-                android:layout_width="200dp"
+                android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginBottom="25dp"
                 android:width="200dp"
@@ -139,7 +140,7 @@
 
             <TextView
                 android:id="@+id/textPassword"
-                android:layout_width="200dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:gravity="center"
@@ -149,7 +150,7 @@
 
             <EditText
                 android:id="@+id/editPassword"
-                android:layout_width="200dp"
+                android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginBottom="25dp"
                 android:width="200dp"
@@ -162,7 +163,7 @@
 
             <TextView
                 android:id="@+id/textPhone"
-                android:layout_width="200dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:gravity="center"
@@ -172,10 +173,9 @@
 
             <EditText
                 android:id="@+id/editPhone"
-                android:layout_width="200dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="25dp"
-                android:width="200dp"
                 android:autofillHints="true"
                 android:background="@drawable/edit_rounded_border"
                 android:inputType="phone"
@@ -183,30 +183,43 @@
                 android:singleLine="true"
                 android:textColor="@color/colorTextPrimary" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/textRole"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:text="@string/role"
+                android:textColor="@color/colorSecondary"
+                android:textSize="18sp" />
 
-                <CheckBox
-                    android:id="@+id/checkAdmin"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/edit_rounded_border"
-                    android:checked="false"
-                    android:gravity="center" />
+            <Spinner
+                android:id="@+id/spinnerRoles"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/button_rounded_border_secondary"
+                android:dropDownWidth="match_parent"
+                android:entries="@array/role_array"
+                android:gravity="center"
+                android:popupBackground="@color/colorPrimary"
+                android:spinnerMode="dropdown" />
 
-                <TextView
-                    android:id="@+id/textAdmin"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_weight="1"
-                    android:text="@string/admin"
-                    android:textColor="@color/colorPrimary"
-                    android:textStyle="bold" />
-            </LinearLayout>
+            <CheckBox
+                android:id="@+id/checkAdmin"
+                style="@android:style/Widget.CompoundButton.CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:checked="true"
+                android:clickable="false"
+                android:gravity="center"
+                android:text="@string/admin"
+                android:textColor="@color/colorPrimary"
+                android:textColorLink="@color/colorPrimary"
+                android:textIsSelectable="true"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
     </ScrollView>
@@ -217,15 +230,17 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginLeft="100dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
         android:layout_marginBottom="32dp"
-        android:background="@drawable/button_rounded_border_primary"
+        android:background="@drawable/button_rounded_border_secondary"
         android:onClick="save"
         android:text="@string/save"
-        android:textColor="@color/colorSecondary"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

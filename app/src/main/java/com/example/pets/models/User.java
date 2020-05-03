@@ -8,6 +8,7 @@ public class User implements Serializable {
     private String name;
     private String surname;
     private String password;
+    private int role;
     private long phone;
     private long CPF;
     private boolean admin;
@@ -15,12 +16,13 @@ public class User implements Serializable {
     public User() {
     }
 
-    public User(String name, String surname, long CPF, String password, long phone, boolean admin) {
+    public User(String name, String surname, long CPF, String password, long phone, int role, boolean admin) {
         this.name = name;
         this.CPF = CPF;
         this.surname = surname;
         this.password = password;
         this.phone = phone;
+        this.role = role;
         this.admin = admin;
     }
 
@@ -48,6 +50,10 @@ public class User implements Serializable {
         this.surname = surname;
     }
 
+    public String getFullName(){
+        return String.format("%s %s", name, surname);
+    }
+
     public String getPassword() {
         return password;
     }
@@ -72,7 +78,15 @@ public class User implements Serializable {
         this.CPF = CPF;
     }
 
-    public boolean getAdmin() {
+    public int getRole() {
+        return role;
+    }
+
+    public void setRole(int role) {
+        this.role = role;
+    }
+
+    public boolean isAdmin() {
         return admin;
     }
 
