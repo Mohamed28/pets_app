@@ -22,7 +22,7 @@ public class UserDAO {
 
     public UserDAO(Context context) {
         database = Connection.getInstance(context);
-        UsersSeeds.install(this);
+//        UsersSeeds.install(this);
     }
 
     public void insert(User user) {
