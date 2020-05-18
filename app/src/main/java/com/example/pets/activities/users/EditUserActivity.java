@@ -1,7 +1,5 @@
 package com.example.pets.activities.users;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -15,12 +13,14 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.pets.R;
 import com.example.pets.activities.MainMenuActivity;
 import com.example.pets.daos.UserDAO;
 import com.example.pets.models.User;
 
-public class NewUserActivity extends AppCompatActivity {
+public class EditUserActivity extends AppCompatActivity {
     private EditText editName, editSurname, editCPF, editPassword, editPhone;
     private CheckBox checkAdmin;
     private UserDAO userDAO;
@@ -60,11 +60,9 @@ public class NewUserActivity extends AppCompatActivity {
         });
     }
 
-    // TODO meétodo para escurecer o fundo do input quando este estive com focus
-
     public void save(View view) {
         try {
-            userDAO.insert(new User(
+            userDAO.update(new User(
                     editName.getText().toString(),
                     editSurname.getText().toString(),
                     Long.parseLong(editCPF.getText().toString()),
@@ -78,7 +76,7 @@ public class NewUserActivity extends AppCompatActivity {
 
         } catch (Exception e) {
             Toast.makeText(this, "Falha ao tentar gravar dados, verifique os dados e tente novamente", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(this, NewUserActivity.class));
+            startActivity(new Intent(this, EditUserActivity.class));
         }
         startActivity(new Intent(this, MainMenuActivity.class));
     }

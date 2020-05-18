@@ -3,6 +3,7 @@
     <string name="app_logo">Logo da aplicação</string>
     <string name="app_version">v.0.1-dev</string>
     <string name="name">Nome</string>
+    <string name="user">Usuário</string>
     <string name="surname">Sobrenome</string>
     <string name="cpf">CPF</string>
     <string name="password">Senha</string>
@@ -12,12 +13,14 @@
     <string name="save">Salvar</string>
     <string name="login">Acessar</string>
     <string name="new_user">Novo Usuário</string>
+    <string name="edit_user">Editar Usuário</string>
     <string name="list_users">Lista de Usuários</string>
     <string name="sign_up">Cadastre-se</string>
     <string name="subscribe">Cadastrar</string>
     <string name="details">Detalhes</string>
     <string name="edit">Editar</string>
     <string name="remove">Remover</string>
+    <string name="back">Voltar</string>
 
     <string-array name="role_array">
         <item>Atendimento</item>

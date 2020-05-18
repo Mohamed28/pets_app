@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     public void Check() {
 //        TODO sistema de consulta de um user que retorna um objeto user
 //         será usado para a validação de acesso
-        user = userDAO.find(Long.parseLong(editLogin.getText().toString()));
+        user = userDAO.findByCPF(Long.parseLong(editLogin.getText().toString()));
 
         if (editLogin.getText().toString().equals("admin") && editPassword.getText().toString().equals("1234")) {
             Toast.makeText(this, "Success Login", Toast.LENGTH_SHORT).show();

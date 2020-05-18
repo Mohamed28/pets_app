@@ -59,7 +59,38 @@ public class UserDAO {
         return users;
     }
 
-    public User find(long cpf) {
+    public User find(int id) {
+        User user = new User();
+        final String WHERE = "user.id=" + id;
+        Cursor cursor = database.query("user", DatabaseFactory.USER_COLUMNS, WHERE, null,null,null,null);
+
+        try {
+            cursor.moveToFirst();
+            user.setId(cursor.getInt(0));
+            user.setName(cursor.getString(1));
+            user.setSurname(cursor.getString(2));
+            user.setCPF(cursor.getLong(3));
+            user.setPassword(cursor.getString(4));
+            user.setPhone(cursor.getLong(5));
+            user.setRole(cursor.getInt(6));
+            user.setAdmin((cursor.getInt(7) == 1));
+
+        } catch (SQLiteException e){
+            database.close();
+        }
+        return user;
+    }
+
+    public User findByCPF(long cpf) {
         return null;
+    }
+
+    public void update(User user){
+        String sql = "";
+
+    }
+
+    public void remove(int id) {
+
     }
 }

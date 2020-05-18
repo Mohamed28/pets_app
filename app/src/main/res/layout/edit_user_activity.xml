@@ -34,7 +34,7 @@
         android:layout_marginRight="100dp"
         android:layout_marginBottom="16dp"
         android:gravity="center_vertical|center_horizontal"
-        android:text="@string/new_user"
+        android:text="@string/edit_user"
         android:textColor="@color/colorSecondary"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -195,7 +195,7 @@
                 android:layout_marginBottom="8dp"
                 android:gravity="center"
                 android:text="@string/role"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/colorSecondary"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
