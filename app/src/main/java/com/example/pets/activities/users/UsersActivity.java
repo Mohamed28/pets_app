@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -42,11 +43,11 @@ public class UsersActivity extends AppCompatActivity {
     }
 
     public void add(View view) {
-        startActivity(new Intent(this, NewUserActivity.class));
+        startActivity(new Intent(this, UserNewActivity.class));
     }
 
     public void edit(View view, int userID) {
-        Intent intent = new Intent(this, NewUserActivity.class);
+        Intent intent = new Intent(this, UserNewActivity.class);
         intent.putExtra("id", userID);
         startActivity(intent);
     }
@@ -58,8 +59,11 @@ public class UsersActivity extends AppCompatActivity {
     }
 
     public void remove(View view, int userID) {
-        Intent intent = new Intent(this, NewUserActivity.class);
-        intent.putExtra("id", userID);
-        startActivity(intent);
+        if (userDAO.delete(userID)) {
+            Toast.makeText(this, "Usuário id: " + userID + " removido com sucesso!", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Erro na execução desta remoção do usuário!", Toast.LENGTH_SHORT).show();
+        }
+        startActivity(new Intent(this, UsersActivity.class));
     }
 }

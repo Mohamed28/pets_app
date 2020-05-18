@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.pets.R;
-import com.example.pets.activities.users.NewUserActivity;
 import com.example.pets.activities.users.UsersActivity;
 
 public class MainMenuActivity extends AppCompatActivity {

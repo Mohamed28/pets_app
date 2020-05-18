@@ -20,7 +20,7 @@ import com.example.pets.activities.MainMenuActivity;
 import com.example.pets.daos.UserDAO;
 import com.example.pets.models.User;
 
-public class EditUserActivity extends AppCompatActivity {
+public class UserEditActivity extends AppCompatActivity {
     private EditText editName, editSurname, editCPF, editPassword, editPhone;
     private CheckBox checkAdmin;
     private UserDAO userDAO;
@@ -29,7 +29,7 @@ public class EditUserActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.new_user_activity);
+        setContentView(R.layout.user_new_activity);
         editName = findViewById(R.id.editName);
         editSurname = findViewById(R.id.editSurname);
         editCPF = findViewById(R.id.editCPF);
@@ -76,7 +76,7 @@ public class EditUserActivity extends AppCompatActivity {
 
         } catch (Exception e) {
             Toast.makeText(this, "Falha ao tentar gravar dados, verifique os dados e tente novamente", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(this, EditUserActivity.class));
+            startActivity(new Intent(this, UserEditActivity.class));
         }
         startActivity(new Intent(this, MainMenuActivity.class));
     }

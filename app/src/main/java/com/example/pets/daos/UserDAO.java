@@ -3,8 +3,10 @@ package com.example.pets.daos;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
+import android.widget.Toast;
 
 import com.example.pets.daos.seeds.UsersSeeds;
 import com.example.pets.factories.DatabaseFactory;
@@ -62,7 +64,7 @@ public class UserDAO {
     public User find(int id) {
         User user = new User();
         final String WHERE = "user.id=" + id;
-        Cursor cursor = database.query("user", DatabaseFactory.USER_COLUMNS, WHERE, null,null,null,null);
+        Cursor cursor = database.query("user", DatabaseFactory.USER_COLUMNS, WHERE, null, null, null, null);
 
         try {
             cursor.moveToFirst();
@@ -75,7 +77,7 @@ public class UserDAO {
             user.setRole(cursor.getInt(6));
             user.setAdmin((cursor.getInt(7) == 1));
 
-        } catch (SQLiteException e){
+        } catch (SQLiteException e) {
             database.close();
         }
         return user;
@@ -85,12 +87,19 @@ public class UserDAO {
         return null;
     }
 
-    public void update(User user){
+    public void update(User user) {
         String sql = "";
 
     }
 
-    public void remove(int id) {
-
+    public boolean delete(int id) {
+        final String WHERE = "user.id=" + id;
+        try {
+            database.delete("user", WHERE, null);
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }
