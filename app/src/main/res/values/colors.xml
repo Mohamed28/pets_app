@@ -6,6 +6,9 @@
     <color name="colorSecondary">#FFFFFF</color>
     <color name="colorSecondaryDarker">#E2E2F2</color>
     <color name="colorTextSecondary">#99B2C9DC</color>
+    <color name="colorTextSecondaryDarker">#A2A2A2</color>
 
+
+    <color name="colorDanger">#FF2255</color>
     <color name="colorAccent">#E66D47</color>
 </resources>

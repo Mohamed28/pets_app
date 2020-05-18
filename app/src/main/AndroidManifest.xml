@@ -18,10 +18,10 @@
         </activity>
         <activity android:name=".activities.LoginActivity" />
         <activity android:name=".activities.MainMenuActivity" />
-        <activity android:name=".activities.users.NewUserActivity" />
+        <activity android:name=".activities.users.UserNewActivity" />
         <activity android:name=".activities.users.UsersActivity" />
-        <activity android:name=".activities.clients.ClientsActivity"></activity>
-        <activity android:name=".activities.clients.NewClientActivity"></activity>
+        <activity android:name=".activities.users.UserShowActivity" />
+        <activity android:name=".activities.users.UserEditActivity" />
     </application>
 
 </manifest>
