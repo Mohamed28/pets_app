@@ -94,7 +94,7 @@
                     android:gravity="center"
                     android:text="Pets"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="10sp" />
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -108,7 +108,7 @@
                     android:id="@+id/imageCalendar"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:adjustViewBounds="true"
+                    android:adjustViewBounds="false"
                     android:background="@android:color/transparent"
                     android:scaleType="fitCenter"
                     app:srcCompat="@drawable/calendar" />
@@ -120,7 +120,7 @@
                     android:gravity="center"
                     android:text="@string/calendar"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="10sp" />
+                    android:textSize="12sp" />
             </LinearLayout>
 
         </LinearLayout>

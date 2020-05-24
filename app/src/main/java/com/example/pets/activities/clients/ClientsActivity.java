@@ -3,10 +3,6 @@ package com.example.pets.activities.clients;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,9 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.pets.R;
 import com.example.pets.activities.MainMenuActivity;
 import com.example.pets.daos.ClientDAO;
-import com.example.pets.daos.UserDAO;
 import com.example.pets.models.Client;
-import com.example.pets.models.User;
 import com.example.pets.utils.ClientListAdapter;
 
 import java.util.List;
@@ -50,17 +44,17 @@ public class ClientsActivity extends AppCompatActivity {
         startActivity(new Intent(this, ClientNewActivity.class));
     }
 
-    public void edit(View view, int clientID) {
-        Intent intent = new Intent(this, ClientNewActivity.class);
-        intent.putExtra("id", clientID);
-        startActivity(new Intent(this, ClientNewActivity.class));
-    }
+//    public void edit(View view, int clientID) {
+//        Intent intent = new Intent(this, ClientNewActivity.class);
+//        intent.putExtra("id", clientID);
+//        startActivity(intent);
+//    }
 
-    public void show(View view, int clientID) {
-        Intent intent = new Intent(this, ClientNewActivity.class);
-        intent.putExtra("id", clientID);
-        startActivity(new Intent(this, ClientNewActivity.class));
-    }
+//    public void show(View view, int clientID) {
+//        Intent intent = new Intent(this, ClientNewActivity.class);
+//        intent.putExtra("id", clientID);
+//        startActivity(intent);
+//    }
 
     public void remove(View view, int userID) {
         if (clientDAO.delete(userID)) {

@@ -21,7 +21,7 @@ public class ClientDAO {
 
     public ClientDAO(Context context) {
         database = Connection.getInstance(context);
-        ClientsSeeds.install(this);
+//        ClientsSeeds.install(this);
     }
 
     public long insert(Client client) {

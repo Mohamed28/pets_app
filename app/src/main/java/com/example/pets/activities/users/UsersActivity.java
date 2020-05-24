@@ -3,7 +3,6 @@ package com.example.pets.activities.users;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,7 +22,6 @@ public class UsersActivity extends AppCompatActivity {
     private RecyclerView recyclerListUsers;
     private UserDAO userDAO;
     private List<User> users;
-    private TextView textDetails, textEdit, textRemove;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
