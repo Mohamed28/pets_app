@@ -22,6 +22,10 @@
         <activity android:name=".activities.users.UsersActivity" />
         <activity android:name=".activities.users.UserShowActivity" />
         <activity android:name=".activities.users.UserEditActivity" />
+        <activity android:name=".activities.clients.ClientNewActivity" />
+        <activity android:name=".activities.clients.ClientsActivity" />
+        <activity android:name=".activities.clients.ClientShowActivity" />
+        <activity android:name=".activities.clients.ClientEditActivity" />
     </application>
 
 </manifest>

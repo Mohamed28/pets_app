@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorSecondary"
+    android:background="@color/colorPrimary"
     tools:context=".activities.clients.ClientsActivity">
 
     <ImageButton
@@ -18,8 +18,9 @@
         android:background="@android:color/transparent"
         android:onClick="back"
         android:src="?attr/actionModeCloseDrawable"
-        android:tint="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView"
+        android:tint="@color/colorSecondary"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerListClients"
+        app:layout_constraintEnd_toStartOf="@+id/textClients"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,39 +32,48 @@
         android:layout_marginEnd="40dp"
         android:layout_marginRight="40dp"
         android:layout_marginBottom="16dp"
-        android:gravity="center_vertical|center_horizontal"
-        android:text="@string/list_clients"
-        android:textColor="@color/colorPrimary"
+        android:gravity="center"
+        android:textColor="@color/colorSecondary"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerListClients"
+        app:layout_constraintEnd_toEndOf="@id/recyclerListClients"
         app:layout_constraintStart_toEndOf="@+id/buttonBack"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        tools:text="@string/list_clients" />
 
-    <ListView
-        android:id="@+id/listClients"
-        android:layout_width="0dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerListClients"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="72dp"
+        android:layout_marginBottom="100dp"
+        android:background="@color/colorSecondary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textUsers"></ListView>
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ImageView
-        android:id="@+id/buttonAdd"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/button_circle_primary"
-        android:tint="@color/colorSecondary"
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <Button
+        android:id="@+id/buttonAddNewUser"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="32dp"
+        android:background="@color/colorSecondary"
+        android:onClick="add"
+        android:text="@string/new_client"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/ic_input_add" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerListClients" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.pets.R;
+import com.example.pets.activities.clients.ClientsActivity;
 import com.example.pets.activities.users.UsersActivity;
 
 public class MainMenuActivity extends AppCompatActivity {
@@ -19,5 +20,9 @@ public class MainMenuActivity extends AppCompatActivity {
 
     public void goToUsers(View view) {
         startActivity(new Intent(this, UsersActivity.class));
+    }
+
+    public void goToClients(View view) {
+        startActivity(new Intent(this, ClientsActivity.class));
     }
 }

@@ -6,7 +6,6 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
-import android.widget.Toast;
 
 import com.example.pets.daos.seeds.UsersSeeds;
 import com.example.pets.factories.DatabaseFactory;
@@ -22,7 +21,7 @@ public class UserDAO {
 
     public UserDAO(Context context) {
         database = Connection.getInstance(context);
-//        UsersSeeds.install(this);
+        UsersSeeds.install(this);
     }
 
     public void insert(User user) {

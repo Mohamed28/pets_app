@@ -11,45 +11,40 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pets.R;
 import com.example.pets.activities.StartActivity;
-import com.example.pets.daos.UserDAO;
-import com.example.pets.models.User;
+import com.example.pets.daos.ClientDAO;
+import com.example.pets.models.Client;
 
-public class NewClientActivity extends AppCompatActivity {
-    private EditText editName, editSurname, editCPF, editPassword, editPhone;
-    private CheckBox checkAdmin;
-    private UserDAO userDAO;
+public class ClientNewActivity extends AppCompatActivity {
+    private EditText editName, editSurname, editCPF, editEmail;
+    private ClientDAO clientDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.new_user_activity);
+        setContentView(R.layout.user_new_activity);
         editName = findViewById(R.id.editName);
         editSurname = findViewById(R.id.editSurname);
         editCPF = findViewById(R.id.editCPF);
-        editPassword = findViewById(R.id.editPassword);
-        editPhone = findViewById(R.id.editPhone);
-        checkAdmin = findViewById(R.id.checkAdmin);
-        userDAO = new UserDAO(this);
+        editEmail = findViewById(R.id.editEmail);
+        clientDAO = new ClientDAO(this);
     }
 
     // TODO meétodo para escurecer o fundo do input quando este estive com focus
 
     public void save(View view) {
         try {
-            userDAO.insert(new User(
+            clientDAO.insert(new Client(
                     editName.getText().toString(),
                     editSurname.getText().toString(),
                     Long.parseLong(editCPF.getText().toString()),
-                    editPassword.getText().toString(),
-                    Long.parseLong(editPhone.getText().toString()),
-                    checkAdmin.isChecked())
+                    editEmail.getText().toString())
             );
 
             Toast.makeText(this, "Novo funcionário inserido com sucesso!", Toast.LENGTH_SHORT).show();
 
         } catch (Exception e) {
             Toast.makeText(this, "Falha ao tentar gravar dados, verifique os dados e tente novamente", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(this, NewClientActivity.class));
+            startActivity(new Intent(this, ClientNewActivity.class));
         }
         startActivity(new Intent(this, StartActivity.class));
     }

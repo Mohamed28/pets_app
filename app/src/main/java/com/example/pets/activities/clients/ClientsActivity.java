@@ -6,36 +6,40 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pets.R;
 import com.example.pets.activities.MainMenuActivity;
 import com.example.pets.daos.ClientDAO;
+import com.example.pets.daos.UserDAO;
 import com.example.pets.models.Client;
+import com.example.pets.models.User;
+import com.example.pets.utils.ClientListAdapter;
 
 import java.util.List;
 
 public class ClientsActivity extends AppCompatActivity {
+
+    private RecyclerView recyclerListClients;
+    private ClientDAO clientDAO;
+    private List<Client> clients;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.clients_activity);
 
-        ListView listClients = findViewById(R.id.listClients);
-        ClientDAO clientDAO = new ClientDAO(this);
-        List<Client> clients = clientDAO.list();
+        clientDAO = new ClientDAO(this);
+        clients = clientDAO.list();
 
-        ArrayAdapter<Client> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, clients);
-        listClients.setAdapter(adapter);
-
-        listClients.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-            }
-        });
+        recyclerListClients = findViewById(R.id.recyclerListClients);
+        recyclerListClients.setAdapter(new ClientListAdapter(this, clients));
+        recyclerListClients.setLayoutManager(new LinearLayoutManager(this));
     }
 
     public void back(View view) {
@@ -43,24 +47,27 @@ public class ClientsActivity extends AppCompatActivity {
     }
 
     public void add(View view) {
-        startActivity(new Intent(this, NewClientActivity.class));
+        startActivity(new Intent(this, ClientNewActivity.class));
     }
 
-    public void edit(View view, Client client) {
-        Intent intent = new Intent(this, NewClientActivity.class);
-        intent.putExtra("id", client.getId());
-        startActivity(new Intent(this, NewClientActivity.class));
+    public void edit(View view, int clientID) {
+        Intent intent = new Intent(this, ClientNewActivity.class);
+        intent.putExtra("id", clientID);
+        startActivity(new Intent(this, ClientNewActivity.class));
     }
 
-    public void show(View view, Client client) {
-        Intent intent = new Intent(this, NewClientActivity.class);
-        intent.putExtra("id", client.getId());
-        startActivity(new Intent(this, NewClientActivity.class));
+    public void show(View view, int clientID) {
+        Intent intent = new Intent(this, ClientNewActivity.class);
+        intent.putExtra("id", clientID);
+        startActivity(new Intent(this, ClientNewActivity.class));
     }
 
-    public void remove(View view, Client client) {
-        Intent intent = new Intent(this, NewClientActivity.class);
-        intent.putExtra("id", client.getId());
-        startActivity(new Intent(this, NewClientActivity.class));
+    public void remove(View view, int userID) {
+        if (clientDAO.delete(userID)) {
+            Toast.makeText(this, "Usuário id: " + userID + " removido com sucesso!", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Erro na execução desta remoção do usuário!", Toast.LENGTH_SHORT).show();
+        }
+        startActivity(new Intent(this, ClientsActivity.class));
     }
 }

@@ -3,6 +3,7 @@ package com.example.pets.models;
 import java.io.Serializable;
 
 public class Client implements Serializable {
+
     private Integer id;
     private String name;
     private String surname;
@@ -43,6 +44,10 @@ public class Client implements Serializable {
         this.surname = surname;
     }
 
+    public String getFullName(){
+        return String.format("%s %s", name, surname);
+    }
+
     public String getEmail() {
         return email;
     }
@@ -58,4 +63,5 @@ public class Client implements Serializable {
     public void setCPF(long CPF) {
         this.CPF = CPF;
     }
+
 }
