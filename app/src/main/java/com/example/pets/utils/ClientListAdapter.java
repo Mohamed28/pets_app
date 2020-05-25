@@ -1,0 +1,98 @@
+package com.example.pets.utils;
+
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.pets.R;
+import com.example.pets.models.Client;
+
+import java.util.List;
+
+public class ClientListAdapter extends RecyclerView.Adapter<ClientListAdapter.ViewHolder> {
+    private Context context;
+    private List<Client> clients;
+
+    public ClientListAdapter(Context context, List<Client> clients) {
+        this.context = context;
+        this.clients = clients;
+    }
+
+    @NonNull
+    @Override
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.clients_items_layout, parent, false);
+        return new ViewHolder(view);
+    }
+
+    @SuppressLint("SetTextI18n")
+    @Override
+    public void onBindViewHolder(@NonNull ClientListAdapter.ViewHolder holder, int position) {
+
+        holder.textName.setText(clients.get(position).getFullName());
+        holder.textID.setText(clients.get(position).getId().toString());
+        holder.textEmail.setText(clients.get(position).getEmail());
+        holder.clientID = clients.get(position).getId();
+    }
+
+    @Override
+    public int getItemCount() {
+        return clients.size();
+    }
+
+    class ViewHolder extends RecyclerView.ViewHolder {
+        private int clientID;
+        private TextView textName;
+        private TextView textID;
+        private TextView textEmail;
+
+        @SuppressLint("CutPasteId")
+        ViewHolder(@NonNull View itemView) {
+            super(itemView);
+            textName = itemView.findViewById(R.id.textName);
+            textID = itemView.findViewById(R.id.textID);
+            textEmail = itemView.findViewById(R.id.textEmail);
+
+            ImageButton imagePets = itemView.findViewById(R.id.imagePets);
+            TextView textPets = itemView.findViewById(R.id.textPets);
+            ImageButton imageCalendar = itemView.findViewById(R.id.imageCalendar);
+            TextView textCalendar = itemView.findViewById(R.id.textCalendar);
+
+            textPets.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(context, "Clicked on Label for Client id:" + clientID, Toast.LENGTH_LONG).show();
+                }
+            });
+
+            textCalendar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(context, "Clicked on Label for Client id:" + clientID, Toast.LENGTH_LONG).show();
+                }
+            });
+
+            imagePets.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(context, "Clicked on Icon for Client id:" + clientID, Toast.LENGTH_LONG).show();
+                }
+            });
+
+            imageCalendar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(context, "Clicked on Icon for Client id:" + clientID, Toast.LENGTH_LONG).show();
+                }
+            });
+        }
+    }
+}

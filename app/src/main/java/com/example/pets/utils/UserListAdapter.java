@@ -49,19 +49,20 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.ViewHo
 
     class ViewHolder extends RecyclerView.ViewHolder {
         private int userID;
-        private ConstraintLayout itemsLayout;
-        private TextView textName, textRole, textPhone, textEdit, textDetails, textRemove;
+        private TextView textName;
+        private TextView textRole;
+        private TextView textPhone;
 
         @SuppressLint("CutPasteId")
         ViewHolder(@NonNull View itemView) {
             super(itemView);
-            itemsLayout = itemView.findViewById(R.id.itemsLayout);
             textName = itemView.findViewById(R.id.textName);
             textRole = itemView.findViewById(R.id.textRole);
             textPhone = itemView.findViewById(R.id.textPhone);
-            textDetails = itemView.findViewById(R.id.textDetails);
-            textEdit = itemView.findViewById(R.id.textEdit);
-            textRemove = itemView.findViewById(R.id.textRemove);
+
+            TextView textDetails = itemView.findViewById(R.id.textDetails);
+            TextView textEdit = itemView.findViewById(R.id.textEdit);
+            TextView textRemove = itemView.findViewById(R.id.textRemove);
 
             textDetails.setOnClickListener(new View.OnClickListener() {
                 @Override

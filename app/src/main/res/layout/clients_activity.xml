@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".activities.users.UsersActivity">
+    tools:context=".activities.clients.ClientsActivity">
 
     <ImageButton
         android:id="@+id/buttonBack"
@@ -19,14 +19,14 @@
         android:onClick="back"
         android:src="?attr/actionModeCloseDrawable"
         android:tint="@color/colorSecondary"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerListUsers"
-        app:layout_constraintEnd_toStartOf="@+id/textUsers"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerListClients"
+        app:layout_constraintEnd_toStartOf="@+id/textClients"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/textUsers"
+        android:id="@+id/textClients"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginTop="16dp"
@@ -37,14 +37,14 @@
         android:textColor="@color/colorSecondary"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerListUsers"
-        app:layout_constraintEnd_toEndOf="@id/recyclerListUsers"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerListClients"
+        app:layout_constraintEnd_toEndOf="@id/recyclerListClients"
         app:layout_constraintStart_toEndOf="@+id/buttonBack"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/list_users" />
+        tools:text="Lista de Clientes" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerListUsers"
+        android:id="@+id/recyclerListClients"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="72dp"
@@ -57,7 +57,7 @@
     </androidx.recyclerview.widget.RecyclerView>
 
     <ImageButton
-        android:id="@+id/imageAddUser"
+        android:id="@+id/imageAddClient"
         android:layout_width="96dp"
         android:layout_height="96dp"
         android:layout_marginEnd="26dp"
@@ -67,10 +67,10 @@
         android:background="@drawable/button_circle_border_shadow"
         android:cropToPadding="true"
         android:foregroundGravity="center"
-        android:onClick="goToNewUser"
+        android:onClick="goToNewClient"
         android:scaleType="centerInside"
-        android:src="@drawable/add_user_transparent"
-        app:layout_constraintBottom_toBottomOf="@+id/recyclerListUsers"
-        app:layout_constraintEnd_toEndOf="@+id/recyclerListUsers" />
+        android:src="@drawable/add_client_transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerListClients"
+        app:layout_constraintEnd_toEndOf="@+id/recyclerListClients" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
