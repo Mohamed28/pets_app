@@ -9,15 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.pets.activities.StartActivity">
+        <activity android:name=".activities.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name="com.example.pets.activities.LoginActivity" />
-        <activity android:name="com.example.pets.activities.NewUserActivity" />
-
+        <activity android:name=".activities.LoginActivity" />
+        <activity android:name=".activities.MainMenuActivity" />
+        <activity android:name=".activities.users.UserNewActivity" />
+        <activity android:name=".activities.users.UsersActivity" />
+        <activity android:name=".activities.users.UserShowActivity" />
+        <activity android:name=".activities.users.UserEditActivity" />
     </application>
+
 </manifest>
