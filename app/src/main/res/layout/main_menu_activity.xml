@@ -33,8 +33,10 @@
         android:padding="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <ImageButton
             android:id="@+id/buttonUsers"
@@ -57,6 +59,18 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
+        <TextView
+            android:id="@+id/textUsers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/users"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/buttonUsers"
+            app:layout_constraintStart_toStartOf="@+id/buttonUsers"
+            app:layout_constraintTop_toBottomOf="@+id/buttonUsers" />
+
         <ImageButton
             android:id="@+id/buttonClients"
             android:layout_width="100dp"
@@ -77,6 +91,66 @@
             app:layout_constraintStart_toEndOf="@+id/buttonUsers"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textClients"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/clients"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/buttonClients"
+            app:layout_constraintStart_toStartOf="@+id/buttonClients"
+            app:layout_constraintTop_toBottomOf="@+id/buttonClients" />
+
+        <ImageButton
+            android:id="@+id/buttonStocks"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="48dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="@+id/buttonUsers"
+            app:layout_constraintStart_toStartOf="@+id/buttonUsers"
+            app:layout_constraintTop_toBottomOf="@+id/textUsers"
+            app:srcCompat="@drawable/stocks" />
+
+        <TextView
+            android:id="@+id/textStocks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stocks"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/buttonStocks"
+            app:layout_constraintStart_toStartOf="@+id/buttonStocks"
+            app:layout_constraintTop_toBottomOf="@+id/buttonStocks" />
+
+        <ImageButton
+            android:id="@+id/imageCarts"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="48dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="@+id/buttonClients"
+            app:layout_constraintStart_toStartOf="@+id/buttonClients"
+            app:layout_constraintTop_toBottomOf="@+id/textClients"
+            app:srcCompat="@drawable/cart" />
+
+        <TextView
+            android:id="@+id/textCarts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/carts"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/imageCarts"
+            app:layout_constraintStart_toStartOf="@+id/imageCarts"
+            app:layout_constraintTop_toBottomOf="@+id/imageCarts" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

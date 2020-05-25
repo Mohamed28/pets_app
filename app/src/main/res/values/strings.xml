@@ -2,8 +2,9 @@
     <string name="app_name">Pets</string>
     <string name="app_logo">Logo da aplicação</string>
     <string name="app_version">v.0.1-dev</string>
-    <string name="name">Nome</string>
     <string name="user">Usuário</string>
+    <string name="users">Usuários</string>
+    <string name="name">Nome</string>
     <string name="surname">Sobrenome</string>
     <string name="cpf">CPF</string>
     <string name="password">Senha</string>
@@ -17,6 +18,10 @@
     <string name="edit_user">Editar Usuário</string>
     <string name="list_users">Lista de Usuários</string>
     <string name="new_client">Novo Cliente</string>
+    <string name="client">Cliente</string>
+    <string name="clients">Clientes</string>
+    <string name="stocks">Produtos</string>
+    <string name="carts">Compras</string>
     <string name="edit_clients">Editar Clientes</string>
     <string name="list_clients">Lista de Clientes</string>
     <string name="sign_up">Cadastre-se</string>
