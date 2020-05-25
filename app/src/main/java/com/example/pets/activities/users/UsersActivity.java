@@ -40,7 +40,7 @@ public class UsersActivity extends AppCompatActivity {
         startActivity(new Intent(this, MainMenuActivity.class));
     }
 
-    public void add(View view) {
+    public void goToNewUser(View view) {
         startActivity(new Intent(this, UserNewActivity.class));
     }
 

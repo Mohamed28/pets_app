@@ -22,7 +22,8 @@
         app:layout_constraintBottom_toTopOf="@+id/recyclerListUsers"
         app:layout_constraintEnd_toStartOf="@+id/textUsers"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textUsers"
@@ -47,7 +48,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="72dp"
-        android:layout_marginBottom="100dp"
         android:background="@color/colorSecondary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,24 +56,21 @@
 
     </androidx.recyclerview.widget.RecyclerView>
 
-    <Button
-        android:id="@+id/buttonAddNewUser"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginRight="100dp"
-        android:layout_marginBottom="32dp"
-        android:background="@color/colorSecondary"
-        android:onClick="add"
-        android:text="@string/new_user"
-        android:textColor="@color/colorPrimary"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerListUsers" />
+    <ImageButton
+        android:id="@+id/imageAddUser"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="24dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/button_circle_border_shadow"
+        android:cropToPadding="true"
+        android:foregroundGravity="center"
+        android:onClick="goToNewUser"
+        android:scaleType="centerInside"
+        android:src="@drawable/add_user_transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerListUsers"
+        app:layout_constraintEnd_toEndOf="@+id/recyclerListUsers" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
