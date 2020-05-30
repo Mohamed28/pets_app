@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".activities.clients.ClientNewActivity">
+    tools:context=".activities.products.ProductNewActivity">
 
     <ImageButton
         android:id="@+id/buttonBack"
@@ -31,7 +31,7 @@
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
         android:gravity="center_vertical|center_horizontal"
-        android:text="@string/edit_client"
+        android:text="@string/edit_product"
         android:textColor="@color/colorSecondary"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -41,7 +41,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <include
-        layout="@layout/user_form_layout"
+        layout="@layout/product_form_layout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="72dp"
