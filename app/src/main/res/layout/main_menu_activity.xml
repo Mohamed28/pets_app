@@ -110,11 +110,12 @@
             android:layout_height="100dp"
             android:layout_marginTop="48dp"
             android:background="@android:color/transparent"
+            android:onClick="goToProducts"
             android:scaleType="fitCenter"
             app:layout_constraintEnd_toEndOf="@+id/buttonUsers"
             app:layout_constraintStart_toStartOf="@+id/buttonUsers"
             app:layout_constraintTop_toBottomOf="@+id/textUsers"
-            app:srcCompat="@drawable/stocks" />
+            app:srcCompat="@drawable/products" />
 
         <TextView
             android:id="@+id/textStocks"

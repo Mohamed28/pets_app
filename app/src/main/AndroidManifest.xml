@@ -18,14 +18,21 @@
         </activity>
         <activity android:name=".activities.LoginActivity" />
         <activity android:name=".activities.MainMenuActivity" />
+
         <activity android:name=".activities.users.UserNewActivity" />
         <activity android:name=".activities.users.UsersActivity" />
         <activity android:name=".activities.users.UserShowActivity" />
         <activity android:name=".activities.users.UserEditActivity" />
+
         <activity android:name=".activities.clients.ClientNewActivity" />
         <activity android:name=".activities.clients.ClientsActivity" />
         <activity android:name=".activities.clients.ClientShowActivity" />
         <activity android:name=".activities.clients.ClientEditActivity" />
+
+        <activity android:name=".activities.products.ProductNewActivity" />
+        <activity android:name=".activities.products.ProductsActivity" />
+        <activity android:name=".activities.products.ProductShowActivity" />
+        <activity android:name=".activities.products.ProductEditActivity" />
     </application>
 
 </manifest>
