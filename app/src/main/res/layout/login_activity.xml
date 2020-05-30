@@ -21,7 +21,7 @@
         android:tint="@color/colorSecondary"
         app:layout_constraintBottom_toTopOf="@+id/scrollView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
         android:id="@+id/editLogin"

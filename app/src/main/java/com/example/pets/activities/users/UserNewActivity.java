@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,12 +19,16 @@ import android.widget.Toast;
 import com.example.pets.R;
 import com.example.pets.daos.UserDAO;
 import com.example.pets.models.User;
+import com.github.rtoshiro.util.format.MaskFormatter;
+import com.github.rtoshiro.util.format.SimpleMaskFormatter;
+import com.github.rtoshiro.util.format.text.MaskTextWatcher;
 
 public class UserNewActivity extends AppCompatActivity {
     private EditText editName, editSurname, editCPF, editPassword, editPhone;
     private CheckBox checkAdmin;
     private UserDAO userDAO;
     private Spinner spinnerRoles;
+    Boolean dadosValidados;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +42,30 @@ public class UserNewActivity extends AppCompatActivity {
         spinnerRoles = findViewById(R.id.spinnerRoles);
         checkAdmin = findViewById(R.id.checkAdmin);
         userDAO = new UserDAO(this);
+
+        //lost focus
+        /*EditText editName = (EditText) findViewById(R.id.editName);
+        editName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    Toast.makeText(UserNewActivity.this, "Campo nome vazio", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });*/
+        //fim lost focus
+
+        //criando a máscara para telefone:
+        SimpleMaskFormatter smf = new SimpleMaskFormatter("(NN) NNNNN-NNNN");
+        MaskTextWatcher mtw = new MaskTextWatcher(editPhone, smf);
+        editPhone.addTextChangedListener(mtw);
+        //Fim da máscara
+
+        //criando a máscara para CPF:
+        /*SimpleMaskFormatter smf2 = new SimpleMaskFormatter("LLL.LLL.LLL-LL");
+        MaskTextWatcher mtw2 = new MaskTextWatcher(editCPF, smf2);
+        editCPF.addTextChangedListener(mtw2);*/
+        //Fim da máscara
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.role_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -62,6 +91,9 @@ public class UserNewActivity extends AppCompatActivity {
     // TODO meétodo para escurecer o fundo do input quando este estive com focus
 
     public void save(View view) {
+
+        /*dadosValidados = validarFormulario();*/
+        
         try {
             userDAO.insert(new User(
                     editName.getText().toString(),
@@ -81,6 +113,26 @@ public class UserNewActivity extends AppCompatActivity {
         }
         startActivity(new Intent(this, UserNewActivity.class));
     }
+
+    /*private Boolean validarFormulario() {
+        boolean retorno = false;
+
+        if(!TextUtils.isEmpty(editName.getText().toString())){
+            retorno = true;
+        }else{
+            editName.setError("*");
+            editName.requestFocus();
+        }
+
+        if(!TextUtils.isEmpty(editSurname.getText().toString())){
+            retorno = true;
+        }else{
+            editSurname.setError("*");
+            editSurname.requestFocus();
+        }
+
+        return retorno;
+    }*/
 
     public void back(View view) {
         startActivity(new Intent(this, UsersActivity.class));

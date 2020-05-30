@@ -23,7 +23,7 @@
             android:paddingBottom="24dp">
 
             <TextView
-                android:id="@+id/textName"
+                android:id="@+id/textProduto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -47,7 +47,7 @@
                 android:textColor="@color/colorTextPrimary" />
 
             <TextView
-                android:id="@+id/textSurname"
+                android:id="@+id/textTipo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -71,7 +71,7 @@
                 android:textColor="@color/colorTextPrimary" />
 
             <TextView
-                android:id="@+id/textCPF"
+                android:id="@+id/textMarca"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -139,7 +139,7 @@
                 android:inputType="phone"
                 android:padding="5dp"
                 android:singleLine="true"
-                android:textColor="@color/colorTextPrimary" />
+                android:textColor="@color/colorTextPrimary"/>
 
             <TextView
                 android:id="@+id/textRole"

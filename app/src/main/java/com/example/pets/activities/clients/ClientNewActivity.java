@@ -3,7 +3,6 @@ package com.example.pets.activities.clients;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -25,7 +24,7 @@ public class ClientNewActivity extends AppCompatActivity {
         editName = findViewById(R.id.editName);
         editSurname = findViewById(R.id.editSurname);
         editCPF = findViewById(R.id.editCPF);
-        editEmail = findViewById(R.id.editEmail);
+        editEmail = findViewById(R.id.editPreco);
         clientDAO = new ClientDAO(this);
     }
 

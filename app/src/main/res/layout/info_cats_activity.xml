@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.cats.info_cats"
+    android:background="#FFFFFF"
+    android:id="@+id/scrollView">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vacinação dos gatos"
+        android:textStyle="bold"
+        android:textSize="36sp"
+        android:layout_margin="20dp"
+        android:textColor="#000000"/>
+
+    <ImageView
+
+        android:layout_width="wrap_content"
+        android:layout_height="220dp"
+        android:src="@drawable/vacinacao_gatos"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Você certamente já ouviu falar em vacinas e até já tomou algumas, não é? Desde pequenos, os humanos são vacinados para ficarem protegidos de diversas doenças. O mesmo acontece com os animais. As vacinas são constituídas de vírus ou bactérias causadoras das doenças, que estão atenuados ou mortos. Em alguns casos estão fragmentados.
+Ao ser aplicada, a vacina induz o organismo a produzir anticorpos (células de defesa). Isso faz com que o corpo desenvolva o que é tecnicamente chamado de “memória imunológica”, ou seja, que produza os anticorpos especializados em combater determinada doença, antes mesmo de ser acometido pelo vírus ou pela bactéria causadora dela. "
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:textAlignment="viewStart"
+        android:textColor="#000000"
+        android:background="#FFFFFF"/>
+
+</LinearLayout>

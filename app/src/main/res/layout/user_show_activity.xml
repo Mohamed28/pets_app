@@ -96,7 +96,7 @@
                     android:textColor="@color/colorTextSecondaryDarker" />
 
                 <TextView
-                    android:id="@+id/textCPF"
+                    android:id="@+id/textMarca"
                     android:layout_width="180dp"
                     android:layout_height="wrap_content"
                     android:gravity="center"

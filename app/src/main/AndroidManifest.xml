@@ -9,6 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <!-- <activity android:name=".PhotoRegister"></activity> -->
+        <activity android:name=".activities.dogs.info_dogs" />
+        <activity android:name=".activities.cats.info_cats" />
+        <activity android:name=".pets_info" />
+        <activity android:name=".activities.products.product_new_activity" />
         <activity android:name=".activities.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

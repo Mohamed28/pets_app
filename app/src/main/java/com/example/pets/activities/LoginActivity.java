@@ -1,6 +1,7 @@
 package com.example.pets.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatEditText;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 import com.example.pets.R;
 import com.example.pets.daos.UserDAO;
 import com.example.pets.models.User;
+import com.google.android.material.textfield.TextInputLayout;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText editLogin, editPassword;
@@ -25,6 +27,7 @@ public class LoginActivity extends AppCompatActivity {
 
         editLogin = findViewById(R.id.editLogin);
         editPassword = findViewById(R.id.editPassword);
+
     }
 
     public void Check() {

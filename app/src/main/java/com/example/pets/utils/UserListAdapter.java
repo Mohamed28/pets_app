@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pets.R;
@@ -56,7 +55,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.ViewHo
         @SuppressLint("CutPasteId")
         ViewHolder(@NonNull View itemView) {
             super(itemView);
-            textName = itemView.findViewById(R.id.textName);
+            textName = itemView.findViewById(R.id.textProduto);
             textRole = itemView.findViewById(R.id.textRole);
             textPhone = itemView.findViewById(R.id.textPhone);
 

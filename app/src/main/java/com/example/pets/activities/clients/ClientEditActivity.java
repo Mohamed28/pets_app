@@ -1,25 +1,15 @@
 package com.example.pets.activities.clients;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pets.R;
-import com.example.pets.activities.MainMenuActivity;
-import com.example.pets.activities.users.UsersActivity;
 import com.example.pets.daos.ClientDAO;
-import com.example.pets.models.User;
 
 public class ClientEditActivity extends AppCompatActivity {
     private EditText editName, editSurname, editCPF, editEmail;

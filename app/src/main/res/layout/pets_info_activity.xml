@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorSecondary"
+    tools:context=".activities.MainMenuActivity">
+
+    <TextView
+        android:id="@+id/textPets"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:text="Informações"
+        android:textColor="@color/colorSecondary"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="72dp"
+        android:background="@drawable/pets_background"
+        android:padding="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <ImageButton
+            android:id="@+id/buttonStocks"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="48dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="@+id/buttonUsers"
+            app:layout_constraintStart_toStartOf="@+id/buttonUsers"
+            app:layout_constraintTop_toBottomOf="@+id/textUsers"
+            app:srcCompat="@drawable/dog_icon01"
+            android:onClick="goToInfoDogs"/>
+
+        <TextView
+            android:id="@+id/textStocks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/infodogs"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/buttonStocks"
+            app:layout_constraintStart_toStartOf="@+id/buttonStocks"
+            app:layout_constraintTop_toBottomOf="@+id/buttonStocks" />
+
+        <ImageButton
+            android:id="@+id/imageCarts"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="48dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/buttonClients"
+            app:layout_constraintTop_toBottomOf="@+id/textClients"
+            app:srcCompat="@drawable/cat_icon01"
+            android:onClick="goToInfoCats"/>/>
+
+        <TextView
+            android:id="@+id/textCarts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/infocats"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/imageCarts"
+            app:layout_constraintStart_toStartOf="@+id/imageCarts"
+            app:layout_constraintTop_toBottomOf="@+id/imageCarts" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

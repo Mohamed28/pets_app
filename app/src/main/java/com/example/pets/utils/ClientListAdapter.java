@@ -57,9 +57,9 @@ public class ClientListAdapter extends RecyclerView.Adapter<ClientListAdapter.Vi
         @SuppressLint("CutPasteId")
         ViewHolder(@NonNull View itemView) {
             super(itemView);
-            textName = itemView.findViewById(R.id.textName);
+            textName = itemView.findViewById(R.id.textProduto);
             textID = itemView.findViewById(R.id.textID);
-            textEmail = itemView.findViewById(R.id.textEmail);
+            textEmail = itemView.findViewById(R.id.textPreco);
 
             ImageButton imagePets = itemView.findViewById(R.id.imagePets);
             TextView textPets = itemView.findViewById(R.id.textPets);
