@@ -8,16 +8,16 @@ public class Pet implements Serializable {
     private String name;
     private String specie;
     private String breed;
-    private String owner;
+    private Client owner;
 
     public Pet() {
     }
 
-    public Pet(String name, String specie, String breed, String client) {
+    public Pet(String name, String specie, String breed, Client owner) {
         this.name = name;
         this.specie = specie;
         this.breed = breed;
-        this.owner = client;
+        this.owner = owner;
     }
 
     public Integer getId() {
@@ -52,11 +52,11 @@ public class Pet implements Serializable {
         this.breed = breed;
     }
 
-    public String getOwner() {
+    public Client getOwner() {
         return owner;
     }
 
-    public void setOwner(String owner) {
+    public void setOwner(Client owner) {
         this.owner = owner;
     }
 }
