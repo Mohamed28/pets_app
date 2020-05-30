@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".activities.clients.ClientsActivity">
+    tools:context=".activities.pets.PetsActivity">
 
     <ImageButton
         android:id="@+id/buttonBack"
@@ -19,14 +19,14 @@
         android:onClick="back"
         android:src="?attr/actionModeCloseDrawable"
         android:tint="@color/colorSecondary"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerListClients"
-        app:layout_constraintEnd_toStartOf="@+id/textClients"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerListPets"
+        app:layout_constraintEnd_toStartOf="@+id/textPets"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/textClients"
+        android:id="@+id/textPets"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginTop="16dp"
@@ -37,14 +37,14 @@
         android:textColor="@color/colorSecondary"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerListClients"
-        app:layout_constraintEnd_toEndOf="@id/recyclerListClients"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerListPets"
+        app:layout_constraintEnd_toEndOf="@id/recyclerListPets"
         app:layout_constraintStart_toEndOf="@+id/buttonBack"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Lista de Clientes" />
+        tools:text="Lista de Pets" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerListClients"
+        android:id="@+id/recyclerListPets"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="72dp"
@@ -57,7 +57,7 @@
     </androidx.recyclerview.widget.RecyclerView>
 
     <ImageButton
-        android:id="@+id/imageAddClient"
+        android:id="@+id/imageAddPet"
         android:layout_width="96dp"
         android:layout_height="96dp"
         android:layout_marginEnd="26dp"
@@ -67,10 +67,10 @@
         android:background="@drawable/button_circle_border_shadow"
         android:cropToPadding="true"
         android:foregroundGravity="center"
-        android:onClick="goToNewClient"
+        android:onClick="goToNewPet"
         android:scaleType="centerInside"
         android:src="@drawable/client_add_transparent"
-        app:layout_constraintBottom_toBottomOf="@+id/recyclerListClients"
-        app:layout_constraintEnd_toEndOf="@+id/recyclerListClients" />
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerListPets"
+        app:layout_constraintEnd_toEndOf="@+id/recyclerListPets" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -59,9 +59,9 @@ public class ProductsActivity extends AppCompatActivity {
 
     public void remove(View view, int productID) {
         if (productDAO.delete(productID)) {
-            Toast.makeText(this, "Usuário id: " + productID + " removido com sucesso!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Produto id: " + productID + " removido com sucesso!", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, "Erro na execução desta remoção do usuário!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Erro na execução desta remoção do produto!", Toast.LENGTH_SHORT).show();
         }
         startActivity(new Intent(this, ProductsActivity.class));
     }
