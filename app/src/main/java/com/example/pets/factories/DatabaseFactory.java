@@ -10,6 +10,7 @@ public class DatabaseFactory extends SQLiteOpenHelper {
     public static final int VERSION = 1;
     public static final String[] USER_COLUMNS = {"id", "name", "surname", "CPF", "password", "phone", "role", "admin"};
     public static final String[] ClIENT_COLUMNS = {"id", "name", "surname", "CPF", "email"};
+    public static final String[] PRODUCT_COLUMNS = {"id", "name", "category", "price",};
     private Context context;
 
     public DatabaseFactory(Context context) {
@@ -21,12 +22,14 @@ public class DatabaseFactory extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase database) {
         createTableUser(database);
         createTableClient(database);
+        createTableProduct(database);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion) {
         dropTableDropUser(database);
         dropTableDropClient(database);
+        dropTableDropProduct(database);
     }
 
     public void createTableUser(SQLiteDatabase database) {
@@ -46,11 +49,6 @@ public class DatabaseFactory extends SQLiteOpenHelper {
         }
     }
 
-    public void dropTableDropClient(SQLiteDatabase database) {
-        String sql = "DROP TABLE IF EXISTS client";
-        database.execSQL(sql);
-    }
-
     public void createTableClient(SQLiteDatabase database) {
         try {
             String sql = "CREATE TABLE IF NOT EXISTS client (" +
@@ -65,8 +63,31 @@ public class DatabaseFactory extends SQLiteOpenHelper {
         }
     }
 
+    public void createTableProduct(SQLiteDatabase database) {
+        try {
+            String sql = "CREATE TABLE IF NOT EXISTS product (" +
+                    "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    "name VARCHAR(25) NOT NULL," +
+                    "category TYNYINT NOT NULL," +
+                    "price DECIMAL NOT NULL);";
+            database.execSQL(sql);
+        } catch (SQLiteException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void dropTableDropUser(SQLiteDatabase database) {
         String sql = "DROP TABLE IF EXISTS user";
+        database.execSQL(sql);
+    }
+
+    public void dropTableDropClient(SQLiteDatabase database) {
+        String sql = "DROP TABLE IF EXISTS client";
+        database.execSQL(sql);
+    }
+
+    public void dropTableDropProduct(SQLiteDatabase database) {
+        String sql = "DROP TABLE IF EXISTS product";
         database.execSQL(sql);
     }
 }
