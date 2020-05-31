@@ -63,7 +63,7 @@ public class ProductNewActivity extends AppCompatActivity {
                     Double.parseDouble(editPrice.getText().toString())
             ));
 
-            Toast.makeText(this, "Novo funcionário inserido com sucesso!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Novo produto inserido com sucesso!", Toast.LENGTH_SHORT).show();
 
         } catch (Exception e) {
             Toast.makeText(this, "Falha ao tentar gravar dados, verifique os dados e tente novamente", Toast.LENGTH_SHORT).show();

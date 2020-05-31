@@ -74,11 +74,12 @@ public class ClientDAO {
             client.setSurname(cursor.getString(2));
             client.setCPF(cursor.getLong(3));
             client.setEmail(cursor.getString(4));
+            return client;
 
         } catch (SQLiteException e) {
             database.close();
+            throw new RuntimeException(e);
         }
-        return client;
     }
 
     public Client find(long cpf) {
