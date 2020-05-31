@@ -11,7 +11,7 @@ public class DatabaseFactory extends SQLiteOpenHelper {
     public static final String[] USER_COLUMNS = {"id", "name", "surname", "CPF", "password", "phone", "role", "admin"};
     public static final String[] ClIENT_COLUMNS = {"id", "name", "surname", "CPF", "email"};
     public static final String[] PRODUCT_COLUMNS = {"id", "name", "category", "price",};
-    public static final String[] PET_COLUMNS = {"id", "name", "specie", "breed", "owner"};
+    public static final String[] PET_COLUMNS = {"id", "name", "specie", "breed", "owner_id"};
     private Context context;
 
     public DatabaseFactory(Context context) {
@@ -87,7 +87,7 @@ public class DatabaseFactory extends SQLiteOpenHelper {
             String sql = "CREATE TABLE IF NOT EXISTS product (" +
                     "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                     "name VARCHAR(25) NOT NULL," +
-                    "category TYNYINT NOT NULL," +
+                    "category TINYINT NOT NULL," +
                     "price DECIMAL NOT NULL);";
             database.execSQL(sql);
         } catch (SQLiteException e) {
@@ -109,7 +109,8 @@ public class DatabaseFactory extends SQLiteOpenHelper {
                     "name VARCHAR(25) NOT NULL," +
                     "specie VARCHAR(25) NOT NULL," +
                     "breed VARCHAR(25) NOT NULL, " +
-                    "owner VARCHAR(25) NOT NULL);";
+                    "owner_id INTEGER NOT NULL," +
+                    "FOREIGN KEY('owner_id') REFERENCES client(id));";
             database.execSQL(sql);
         } catch (SQLiteException e) {
             e.printStackTrace();

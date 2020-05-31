@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteException;
 import android.widget.Toast;
 
 import com.example.pets.factories.DatabaseFactory;
+import com.example.pets.models.Client;
 import com.example.pets.models.Pet;
 import com.example.pets.utils.Connection;
 
@@ -17,11 +18,13 @@ import java.util.List;
 
 public class PetDAO {
     private SQLiteDatabase database;
+    private ClientDAO clientDAO;
     private Context context;
 
     public PetDAO(Context context) {
         this.context = context;
         database = Connection.getInstance(context);
+        clientDAO = new ClientDAO(context);
 //        PetsSeeds.install(this);
     }
 
@@ -32,7 +35,7 @@ public class PetDAO {
             values.put("name", pet.getName());
             values.put("species", pet.getSpecie());
             values.put("breed", pet.getBreed());
-            values.put("owner", pet.getOwner());
+            values.put("owner_id", pet.getOwner().getId());
             database.insert("pet", null, values);
         } catch (SQLiteException e) {
             e.printStackTrace();
@@ -51,7 +54,7 @@ public class PetDAO {
                 pet.setName(cursor.getString(1));
                 pet.setSpecie(cursor.getString(2));
                 pet.setBreed(cursor.getString(3));
-                pet.setOwner(cursor.getString(4));
+                pet.setOwner(clientDAO.find(cursor.getInt(4)));
                 pets.add(pet);
             }
         } catch (SQLException e) {
@@ -72,7 +75,7 @@ public class PetDAO {
             pet.setName(cursor.getString(1));
             pet.setSpecie(cursor.getString(2));
             pet.setBreed(cursor.getString(3));
-            pet.setOwner(cursor.getString(4));
+            pet.setOwner(clientDAO.find(cursor.getInt(4)));
 
         } catch (SQLiteException e) {
             database.close();
