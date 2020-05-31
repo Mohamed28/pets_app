@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".activities.clients.ClientShowActivity">
+    tools:context=".activities.pets.PetShowActivity">
 
     <TextView
         android:id="@+id/textHeader"
@@ -18,7 +18,7 @@
         android:layout_marginRight="24dp"
         android:layout_marginBottom="15dp"
         android:gravity="center|center_horizontal|center_vertical"
-        android:text="@string/user"
+        android:text="@string/pet"
         android:textColor="@color/colorSecondary"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/imageClientIcon"
+                android:id="@+id/imagePetIcon"
                 android:layout_width="160dp"
                 android:layout_height="160dp"
                 android:layout_gravity="center_horizontal|center_vertical"
@@ -58,7 +58,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/client_avatar" />
+                app:srcCompat="@drawable/pet_avatar" />
 
             <LinearLayout
                 android:id="@+id/linearLayout"
@@ -75,37 +75,71 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageClientIcon">
+                app:layout_constraintTop_toBottomOf="@+id/imagePetIcon">
 
                 <TextView
-                    android:id="@+id/textCPF"
+                    android:id="@+id/textName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="@string/cpf"
+                    android:text="@string/name"
                     android:textColor="@color/colorPrimary"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textShowCPF"
+                    android:id="@+id/textShowName"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:gravity="center"
                     android:textColor="@color/colorTextSecondaryDarker" />
 
                 <TextView
-                    android:id="@+id/textEmail"
+                    android:id="@+id/textSpecies"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="@string/phone"
+                    android:text="@string/specie"
                     android:textColor="@color/colorPrimary"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textShowPhone"
+                    android:id="@+id/textShowSpecie"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:textColor="@color/colorTextSecondaryDarker" />
+
+                <TextView
+                    android:id="@+id/textBreed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/breed"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textShowBreed"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:textColor="@color/colorTextSecondaryDarker" />
+
+                <TextView
+                    android:id="@+id/textOwner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/owner"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textShowOwner"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:gravity="center"
