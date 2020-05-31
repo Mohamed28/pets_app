@@ -80,7 +80,7 @@
 
                 <TextView
                     android:id="@+id/textPrice"
-                    android:layout_width="180dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="@string/price"
@@ -90,14 +90,14 @@
 
                 <TextView
                     android:id="@+id/textShowPrice"
-                    android:layout_width="180dp"
+                    android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:gravity="center"
                     android:textColor="@color/colorTextSecondaryDarker" />
 
                 <TextView
                     android:id="@+id/textCategory"
-                    android:layout_width="180dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="@string/category"
@@ -107,7 +107,7 @@
 
                 <TextView
                     android:id="@+id/textShowCategory"
-                    android:layout_width="180dp"
+                    android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:gravity="center"
                     android:textColor="@color/colorTextSecondaryDarker" />

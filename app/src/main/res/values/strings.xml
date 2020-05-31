@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Pets</string>
+    <string name="app_name">ControlPets</string>
     <string name="app_logo">Logo da aplicação</string>
     <string name="app_version">v.0.1-dev</string>
 

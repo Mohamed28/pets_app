@@ -80,7 +80,7 @@
 
                 <TextView
                     android:id="@+id/textPhone"
-                    android:layout_width="180dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="@string/phone"
@@ -90,14 +90,14 @@
 
                 <TextView
                     android:id="@+id/textShowPhone"
-                    android:layout_width="180dp"
+                    android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:gravity="center"
                     android:textColor="@color/colorTextSecondaryDarker" />
 
                 <TextView
                     android:id="@+id/textCPF"
-                    android:layout_width="180dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="@string/cpf"
@@ -107,14 +107,14 @@
 
                 <TextView
                     android:id="@+id/textShowCPF"
-                    android:layout_width="180dp"
+                    android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:gravity="center"
                     android:textColor="@color/colorTextSecondaryDarker" />
 
                 <TextView
                     android:id="@+id/textRole"
-                    android:layout_width="180dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="@string/role"
@@ -124,7 +124,7 @@
 
                 <TextView
                     android:id="@+id/textShowRole"
-                    android:layout_width="180dp"
+                    android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:gravity="center"
                     android:textColor="@color/colorTextSecondaryDarker" />

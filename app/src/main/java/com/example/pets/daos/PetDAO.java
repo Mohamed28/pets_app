@@ -83,10 +83,6 @@ public class PetDAO {
         return pet;
     }
 
-    public Pet find(long cpf) {
-        return null;
-    }
-
     public void update(Pet pet) {
         String sql = "";
     }
