@@ -35,7 +35,7 @@
         <activity android:name=".activities.products.ProductEditActivity" />
 
         <activity android:name=".activities.pets.PetNewActivity" />
-        <activity android:name=".activities.pets.PetActivity" />
+        <activity android:name=".activities.pets.PetsActivity" />
         <activity android:name=".activities.pets.PetShowActivity" />
         <activity android:name=".activities.pets.PetEditActivity" />
     </application>

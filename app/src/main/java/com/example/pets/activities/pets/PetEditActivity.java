@@ -36,6 +36,6 @@ public class PetEditActivity extends AppCompatActivity {
     }
 
     public void back(View view) {
-        startActivity(new Intent(this, PetActivity.class));
+        startActivity(new Intent(this, PetsActivity.class));
     }
 }

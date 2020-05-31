@@ -38,9 +38,8 @@ public class PetListAdapter extends RecyclerView.Adapter<PetListAdapter.ViewHold
     public void onBindViewHolder(@NonNull PetListAdapter.ViewHolder holder, int position) {
 
         holder.textName.setText(pets.get(position).getName());
-        holder.textSpecie.setText(pets.get(position).getSpecie().toString());
-        holder.textBreed.setText(pets.get(position).getBreed());
-        holder.textOwner.setText(pets.get(position).getOwner());
+        holder.textSpecies.setText(pets.get(position).getSpecie());
+        holder.petID = pets.get(position).getId();
     }
 
     @Override
@@ -51,48 +50,28 @@ public class PetListAdapter extends RecyclerView.Adapter<PetListAdapter.ViewHold
     class ViewHolder extends RecyclerView.ViewHolder {
         private int petID;
         private TextView textName;
-        private TextView textSpecie;
-        private TextView textBreed;
-        private TextView textOwner;
+        private TextView textSpecies;
 
         @SuppressLint("CutPasteId")
         ViewHolder(@NonNull View itemView) {
             super(itemView);
             textName = itemView.findViewById(R.id.textName);
-            textSpecie = itemView.findViewById(R.id.textSpecie);
-            textBreed = itemView.findViewById(R.id.textBreed);
-            textOwner = itemView.findViewById(R.id.textOwner);
+            textSpecies = itemView.findViewById(R.id.textSpecies);
+
 
             ImageButton imagePets = itemView.findViewById(R.id.imagePets);
-            TextView textPets = itemView.findViewById(R.id.textPets);
-            ImageButton imageCalendar = itemView.findViewById(R.id.imageCalendar);
-            TextView textCalendar = itemView.findViewById(R.id.textCalendar);
-
-            textPets.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Toast.makeText(context, "Clicked on Label for Pet id:" + petID, Toast.LENGTH_LONG).show();
-                }
-            });
-
-            textCalendar.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Toast.makeText(context, "Clicked on Label for Pet id:" + petID, Toast.LENGTH_LONG).show();
-                }
-            });
 
             imagePets.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(context, "Clicked on Icon for Pet id:" + petID, Toast.LENGTH_LONG).show();
+                    Toast.makeText(context, "Clicked on Label for Pet id:" + petID, Toast.LENGTH_LONG).show();
                 }
             });
 
-            imageCalendar.setOnClickListener(new View.OnClickListener() {
+            textName.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(context, "Clicked on Icon for Pet id:" + petID, Toast.LENGTH_LONG).show();
+                    Toast.makeText(context, "Clicked on Label for Pet id:" + petID, Toast.LENGTH_LONG).show();
                 }
             });
         }

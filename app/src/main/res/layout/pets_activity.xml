@@ -69,7 +69,7 @@
         android:foregroundGravity="center"
         android:onClick="goToNewPet"
         android:scaleType="centerInside"
-        android:src="@drawable/client_add_transparent"
+        android:src="@drawable/pet_add_transparent"
         app:layout_constraintBottom_toBottomOf="@+id/recyclerListPets"
         app:layout_constraintEnd_toEndOf="@+id/recyclerListPets" />
 

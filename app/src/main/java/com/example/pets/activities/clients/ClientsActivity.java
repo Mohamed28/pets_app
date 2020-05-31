@@ -44,11 +44,24 @@ public class ClientsActivity extends AppCompatActivity {
         startActivity(new Intent(this, ClientNewActivity.class));
     }
 
+    public void edit(View view, int clientID) {
+        Intent intent = new Intent(this, ClientNewActivity.class);
+        intent.putExtra("id", clientID);
+        startActivity(intent);
+    }
+
+    public void show(View view, int clientID) {
+        Intent intent = new Intent(this, ClientShowActivity.class);
+        intent.putExtra("id", clientID);
+        startActivity(intent);
+    }
+
+
     public void remove(View view, int clientID) {
         if (clientDAO.delete(clientID)) {
-            Toast.makeText(this, "Usuário id: " + clientID + " removido com sucesso!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Cliente id: " + clientID + " removido com sucesso!", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, "Erro na execução desta remoção do usuário!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Erro na execução desta remoção do cliente!", Toast.LENGTH_SHORT).show();
         }
         startActivity(new Intent(this, ClientsActivity.class));
     }

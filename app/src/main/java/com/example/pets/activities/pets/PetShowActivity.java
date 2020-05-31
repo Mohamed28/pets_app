@@ -8,11 +8,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pets.R;
-import com.example.pets.activities.pets.PetActivity;
 import com.example.pets.daos.PetDAO;
 import com.example.pets.models.Pet;
-
-import java.security.acl.Owner;
 
 public class PetShowActivity extends AppCompatActivity {
 
@@ -39,6 +36,6 @@ public class PetShowActivity extends AppCompatActivity {
     }
 
     public void back(View view) {
-        startActivity(new Intent(this, PetActivity.class));
+        startActivity(new Intent(this, PetsActivity.class));
     }
 }

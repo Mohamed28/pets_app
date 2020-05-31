@@ -17,7 +17,7 @@ import com.example.pets.utils.PetListAdapter;
 
 import java.util.List;
 
-public class PetActivity extends AppCompatActivity {
+public class PetsActivity extends AppCompatActivity {
 
     private RecyclerView recyclerListPets;
     private PetDAO petDAO;
@@ -44,12 +44,25 @@ public class PetActivity extends AppCompatActivity {
         startActivity(new Intent(this, PetNewActivity.class));
     }
 
+    public void edit(View view, int petID) {
+        Intent intent = new Intent(this, PetNewActivity.class);
+        intent.putExtra("id", petID);
+        startActivity(intent);
+    }
+
+    public void show(View view, int petID) {
+        Intent intent = new Intent(this, PetShowActivity.class);
+        intent.putExtra("id", petID);
+        startActivity(intent);
+    }
+
+
     public void remove(View view, int petID) {
         if (petDAO.delete(petID)) {
             Toast.makeText(this, "Pet id: " + petID + " removido com sucesso!", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, "Erro na execução desta remoção do pet!", Toast.LENGTH_SHORT).show();
         }
-        startActivity(new Intent(this, PetActivity.class));
+        startActivity(new Intent(this, PetsActivity.class));
     }
 }

@@ -10,12 +10,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pets.R;
 import com.example.pets.activities.StartActivity;
+import com.example.pets.daos.ClientDAO;
 import com.example.pets.daos.PetDAO;
 import com.example.pets.models.Pet;
 
 public class PetNewActivity extends AppCompatActivity {
     private EditText editId, editName, editSpecies, editBreed, editClient;
+    private ClientDAO ownerDAO;
     private PetDAO petDAO;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +29,7 @@ public class PetNewActivity extends AppCompatActivity {
         editBreed = findViewById(R.id.editBreed);
         editClient = findViewById(R.id.editClient);
         petDAO = new PetDAO(this);
+        ownerDAO = new ClientDAO(this);
     }
 
     // TODO método para escurecer o fundo do input quando este estiver com focus
@@ -36,7 +40,7 @@ public class PetNewActivity extends AppCompatActivity {
                     editName.getText().toString(),
                     editSpecies.getText().toString(),
                     editBreed.getText().toString(),
-                    editClient.getText().toString())
+                    ownerDAO.find(Integer.parseInt(editClient.getText().toString())))
             );
 
             Toast.makeText(this, "Novo pet inserido com sucesso!", Toast.LENGTH_SHORT).show();
