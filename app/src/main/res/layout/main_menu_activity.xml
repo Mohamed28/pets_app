@@ -121,7 +121,7 @@
             android:id="@+id/textStocks"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/stocks"
+            android:text="@string/products"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
             android:textStyle="bold"

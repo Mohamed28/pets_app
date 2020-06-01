@@ -111,6 +111,23 @@
                     android:gravity="center"
                     android:textColor="@color/colorTextSecondaryDarker" />
 
+                <TextView
+                    android:id="@+id/textAvailablility"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/product_availablility"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textShowAvailablility"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:textColor="@color/colorTextSecondaryDarker" />
+
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

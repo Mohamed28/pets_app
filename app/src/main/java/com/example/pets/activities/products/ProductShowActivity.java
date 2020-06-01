@@ -15,7 +15,7 @@ import com.example.pets.models.Product;
 public class ProductShowActivity extends AppCompatActivity {
     private Product product;
     private ProductDAO productDAO;
-    TextView textHeader, textShowName, textShowPrice, textShowCategory;
+    TextView textHeader, textShowName, textShowCategory, textShowAvailablility, textShowPrice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,13 +25,15 @@ public class ProductShowActivity extends AppCompatActivity {
         product = productDAO.find(getIntent().getExtras().getInt("id"));
 
         textHeader = findViewById(R.id.textHeader);
-        textShowPrice = findViewById(R.id.textShowPrice);
         textShowCategory = findViewById(R.id.textShowCategory);
+        textShowAvailablility = findViewById(R.id.textShowAvailablility);
+        textShowPrice = findViewById(R.id.textShowPrice);
 
         textHeader.setText(product.getName());
         textShowName.setText(String.valueOf(product.getName()));
-        textShowPrice.setText(String.valueOf(product.getPrice()));
         textShowCategory.setText(Category.stringfy(product.getCategory()));
+        textShowAvailablility.setText(String.valueOf(product.getQuantity()));
+        textShowPrice.setText(product.toCurrency(product.getPrice()));
     }
 
     public void back(View view) {

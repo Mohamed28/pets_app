@@ -9,6 +9,7 @@
     <string name="new_user">Novo Usuário</string>
     <string name="edit_user">Editar Usuário</string>
     <string name="list_users">Lista de Usuários</string>
+    <string name="role">Cargo</string>
     <!-- (((FIM USERS))) -->
 
     <!-- (((CLIENTS))) -->
@@ -25,6 +26,7 @@
     <string name="new_product">Novo Produto</string>
     <string name="edit_product">Editar Produto</string>
     <string name="list_products">Lista de Produtos</string>
+    <string name="product_availablility">Diponível</string>
     <!-- (((FIM PRODUCTS))) -->
 
     <!-- (((PETS))) -->
@@ -34,28 +36,25 @@
     <string name="breed">Raça</string>
     <string name="owner">Dono</string>
     <string name="new_pet">Novo Pet</string>
+    <string name="edit_pets">Editar Pet</string>
     <!-- (((FIM PETS))) -->
 
+    <string name="login">Acessar</string>
     <string name="name">Nome</string>
     <string name="surname">Sobrenome</string>
     <string name="cpf">CPF</string>
     <string name="password">Senha</string>
     <string name="phone">Telefone</string>
-    <string name="role">Cargo</string>
     <string name="category">Categoria</string>
     <string name="admin">Administrador</string>
     <string name="price">Preço</string>
-    <string name="save">Salvar</string>
-    <string name="login">Acessar</string>
     <string name="calendar">Agenda</string>
-    <string name="edit_pets">Editar Pet</string>
-    <string name="stocks">Produtos</string>
     <string name="carts">Compras</string>
-    <string name="sign_up">Cadastre-se</string>
-    <string name="subscribe">Cadastrar</string>
     <string name="details">Detalhes</string>
-    <string name="edit">Editar</string>
     <string name="remove">Remover</string>
+    <string name="quantity">Quantidade</string>
+    <string name="edit">Editar</string>
+    <string name="save">Salvar</string>
     <string name="back">Voltar</string>
 
     <string-array name="role_array">
@@ -75,6 +74,4 @@
         <item>Saúde</item>
         <item>Serviço</item>
     </string-array>
-
-
 </resources>

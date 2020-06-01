@@ -30,6 +30,7 @@ public class ProductDAO {
             ContentValues values = new ContentValues();
             values.put("name", product.getName());
             values.put("category", product.getCategory());
+            values.put("quantity", product.getQuantity());
             values.put("price", product.getPrice());
             database.insert("product", null, values);
         } catch (SQLiteException e) {
@@ -48,7 +49,8 @@ public class ProductDAO {
                 product.setId(cursor.getInt(0));
                 product.setName(cursor.getString(1));
                 product.setCategory(cursor.getInt(2));
-                product.setPrice(cursor.getDouble(3));
+                product.setQuantity(cursor.getInt(3));
+                product.setPrice(cursor.getDouble(4));
                 products.add(product);
             }
         } catch (SQLException e) {
@@ -68,7 +70,8 @@ public class ProductDAO {
             product.setId(cursor.getInt(0));
             product.setName(cursor.getString(1));
             product.setCategory(cursor.getInt(2));
-            product.setPrice(cursor.getDouble(3));
+            product.setQuantity(cursor.getInt(3));
+            product.setPrice(cursor.getDouble(4));
 
         } catch (SQLiteException e) {
             database.close();

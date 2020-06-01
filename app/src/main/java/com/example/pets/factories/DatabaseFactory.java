@@ -10,7 +10,7 @@ public class DatabaseFactory extends SQLiteOpenHelper {
     public static final int VERSION = 1;
     public static final String[] USER_COLUMNS = {"id", "name", "surname", "CPF", "password", "phone", "role", "admin"};
     public static final String[] ClIENT_COLUMNS = {"id", "name", "surname", "CPF", "email"};
-    public static final String[] PRODUCT_COLUMNS = {"id", "name", "category", "price",};
+    public static final String[] PRODUCT_COLUMNS = {"id", "name", "category", "quantity", "price",};
     public static final String[] PET_COLUMNS = {"id", "name", "species", "breed", "owner_id"};
     private Context context;
 
@@ -88,6 +88,7 @@ public class DatabaseFactory extends SQLiteOpenHelper {
                     "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                     "name VARCHAR(25) NOT NULL," +
                     "category TINYINT NOT NULL," +
+                    "quantity TINYINT NOT NULL," +
                     "price DECIMAL NOT NULL);";
             database.execSQL(sql);
         } catch (SQLiteException e) {
@@ -106,7 +107,7 @@ public class DatabaseFactory extends SQLiteOpenHelper {
         try {
             String sql = "CREATE TABLE IF NOT EXISTS pet (" +
                     "id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                    "name VARCHAR(25) NOT NULL," +
+                    "name VARCHAR(25) NOT NULL UNIQUE," +
                     "species VARCHAR(25) NOT NULL," +
                     "breed VARCHAR(25) NOT NULL, " +
                     "owner_id INTEGER NOT NULL," +
