@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.widget.Toast;
 
+import com.example.pets.daos.seeds.ProductsSeeds;
 import com.example.pets.factories.DatabaseFactory;
 import com.example.pets.models.Product;
 import com.example.pets.utils.Connection;
@@ -22,7 +23,7 @@ public class ProductDAO {
     public ProductDAO(Context context) {
         this.context = context;
         database = Connection.getInstance(context);
-//        ProductsSeeds.install(this);
+        ProductsSeeds.install(this);
     }
 
     public void insert(Product product) {

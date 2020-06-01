@@ -38,6 +38,9 @@
         <activity android:name=".activities.pets.PetsActivity" />
         <activity android:name=".activities.pets.PetShowActivity" />
         <activity android:name=".activities.pets.PetEditActivity" />
+
+        <activity android:name=".activities.orders.OrderNewActivity" />
+        <activity android:name=".activities.orders.OrderCheckoutActivity" />
     </application>
 
 </manifest>

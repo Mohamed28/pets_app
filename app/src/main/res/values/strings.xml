@@ -39,6 +39,21 @@
     <string name="edit_pets">Editar Pet</string>
     <!-- (((FIM PETS))) -->
 
+    <!-- (((ORDER))) -->
+    <string name="order">Compra</string>
+    <string name="orders">Compras</string>
+    <string name="list_orders">Lista de Compras</string>
+    <string name="items">Itens</string>
+    <string name="Item">Item</string>
+    <string name="amout">Total</string>
+    <string name="checkout">Finalizar Compra</string>
+    <string name="cancel">Cancelar</string>
+    <string name="next">Próximo</string>
+    <string name="confirm">Confirmar</string>
+    <string name="finish">Finalizar</string>
+    <!-- (((FIM ORDER)) -->
+
+
     <string name="login">Acessar</string>
     <string name="name">Nome</string>
     <string name="surname">Sobrenome</string>
