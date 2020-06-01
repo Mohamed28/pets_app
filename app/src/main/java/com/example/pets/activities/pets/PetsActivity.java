@@ -3,6 +3,7 @@ package com.example.pets.activities.pets;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pets.R;
 import com.example.pets.activities.MainMenuActivity;
+import com.example.pets.activities.clients.ClientsActivity;
 import com.example.pets.daos.PetDAO;
 import com.example.pets.models.Pet;
 import com.example.pets.utils.PetListAdapter;
@@ -27,9 +29,11 @@ public class PetsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pets_activity);
+        TextView textHeader = findViewById(R.id.textHeader);
+        textHeader.setText(R.string.pets);
 
         petDAO = new PetDAO(this);
-        pets = petDAO.list();
+        pets = petDAO.list(getIntent().getExtras().getInt("clientID"));
 
         recyclerListPets = findViewById(R.id.recyclerListPets);
         recyclerListPets.setAdapter(new PetListAdapter(this, pets));
@@ -37,11 +41,13 @@ public class PetsActivity extends AppCompatActivity {
     }
 
     public void back(View view) {
-        startActivity(new Intent(this, MainMenuActivity.class));
+        startActivity(new Intent(this, ClientsActivity.class));
     }
 
     public void goToNewPet(View view) {
-        startActivity(new Intent(this, PetNewActivity.class));
+        Intent intent = new Intent(this, PetNewActivity.class);
+        intent.putExtra("clientID", getIntent().getExtras().getInt("clientID"));
+        startActivity(intent);
     }
 
     public void edit(View view, int petID) {
@@ -55,7 +61,6 @@ public class PetsActivity extends AppCompatActivity {
         intent.putExtra("id", petID);
         startActivity(intent);
     }
-
 
     public void remove(View view, int petID) {
         if (petDAO.delete(petID)) {

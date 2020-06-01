@@ -6,16 +6,20 @@ public class Pet implements Serializable {
 
     private int id;
     private String name;
-    private String specie;
+    private String species;
     private String breed;
     private Client owner;
 
     public Pet() {
     }
 
-    public Pet(String name, String specie, String breed, Client owner) {
+    public Pet(Client owner) {
+        this.owner = owner;
+    }
+
+    public Pet(String name, String species, String breed, Client owner) {
         this.name = name;
-        this.specie = specie;
+        this.species = species;
         this.breed = breed;
         this.owner = owner;
     }
@@ -36,12 +40,12 @@ public class Pet implements Serializable {
         this.name = name;
     }
 
-    public String getSpecie() {
-        return specie;
+    public String getSpecies() {
+        return species;
     }
 
-    public void setSpecie(String specie) {
-        this.specie = specie;
+    public void setSpecies(String species) {
+        this.species = species;
     }
 
     public String getBreed() {

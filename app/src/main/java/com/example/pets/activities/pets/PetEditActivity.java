@@ -12,7 +12,7 @@ import com.example.pets.R;
 import com.example.pets.daos.PetDAO;
 
 public class PetEditActivity extends AppCompatActivity {
-    private EditText editId, editName,editSpecie, editBreed, editClient;
+    private EditText editId, editName,editSpecies, editBreed;
     private PetDAO petDAO;
 
     @Override
@@ -20,9 +20,8 @@ public class PetEditActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_new_activity);
         editName = findViewById(R.id.editName);
-        editSpecie = findViewById(R.id.editSpecie);
+        editSpecies = findViewById(R.id.editSpecies);
         editBreed = findViewById(R.id.editBreed);
-        editClient = findViewById(R.id.editClient);
         petDAO = new PetDAO(this);
     }
 

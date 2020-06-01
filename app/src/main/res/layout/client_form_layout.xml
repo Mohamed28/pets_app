@@ -41,7 +41,7 @@
                 android:width="200dp"
                 android:autofillHints="true"
                 android:background="@drawable/edit_rounded_border"
-                android:inputType="textPersonName"
+                android:inputType="text"
                 android:padding="5dp"
                 android:singleLine="true"
                 android:textColor="@color/colorTextPrimary" />
@@ -65,7 +65,7 @@
                 android:width="200dp"
                 android:autofillHints="true"
                 android:background="@drawable/edit_rounded_border"
-                android:inputType="textPersonName"
+                android:inputType="text"
                 android:padding="5dp"
                 android:singleLine="true"
                 android:textColor="@color/colorTextPrimary" />
@@ -89,7 +89,7 @@
                 android:width="200dp"
                 android:autofillHints="true"
                 android:background="@drawable/edit_rounded_border"
-                android:inputType="number"
+                android:inputType="text"
                 android:padding="5dp"
                 android:singleLine="true"
                 android:textColor="@color/colorTextPrimary" />
@@ -113,7 +113,7 @@
                 android:width="200dp"
                 android:autofillHints="true"
                 android:background="@drawable/edit_rounded_border"
-                android:inputType="textPassword"
+                android:inputType="textEmailAddress"
                 android:padding="5dp"
                 android:singleLine="true"
                 android:textColor="@color/colorTextPrimary" />

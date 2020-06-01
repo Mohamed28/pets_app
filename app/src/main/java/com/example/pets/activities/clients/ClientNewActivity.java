@@ -21,15 +21,13 @@ public class ClientNewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.user_new_activity);
+        setContentView(R.layout.client_new_activity);
+        clientDAO = new ClientDAO(this);
         editName = findViewById(R.id.editName);
         editSurname = findViewById(R.id.editSurname);
         editCPF = findViewById(R.id.editCPF);
         editEmail = findViewById(R.id.editEmail);
-        clientDAO = new ClientDAO(this);
     }
-
-    // TODO meétodo para escurecer o fundo do input quando este estive com focus
 
     public void save(View view) {
         try {
@@ -41,15 +39,15 @@ public class ClientNewActivity extends AppCompatActivity {
             );
 
             Toast.makeText(this, "Novo funcionário inserido com sucesso!", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, ClientsActivity.class));
 
         } catch (Exception e) {
             Toast.makeText(this, "Falha ao tentar gravar dados, verifique os dados e tente novamente", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this, ClientNewActivity.class));
         }
-        startActivity(new Intent(this, StartActivity.class));
     }
 
     public void back(View view) {
-        startActivity(new Intent(this, StartActivity.class));
+        startActivity(new Intent(this, ClientsActivity.class));
     }
 }

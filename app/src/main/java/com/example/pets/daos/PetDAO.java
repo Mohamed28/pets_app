@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.widget.Toast;
 
+import com.example.pets.daos.seeds.PetsSeeds;
 import com.example.pets.factories.DatabaseFactory;
 import com.example.pets.models.Client;
 import com.example.pets.models.Pet;
@@ -25,15 +26,14 @@ public class PetDAO {
         this.context = context;
         database = Connection.getInstance(context);
         clientDAO = new ClientDAO(context);
-//        PetsSeeds.install(this);
+//        PetsSeeds.install(this, clientDAO);
     }
 
     public void insert(Pet pet) {
         try {
             ContentValues values = new ContentValues();
-            values.put("id", pet.getId());
             values.put("name", pet.getName());
-            values.put("species", pet.getSpecie());
+            values.put("species", pet.getSpecies());
             values.put("breed", pet.getBreed());
             values.put("owner_id", pet.getOwner().getId());
             database.insert("pet", null, values);
@@ -42,17 +42,18 @@ public class PetDAO {
         }
     }
 
-    public List<Pet> list() {
+    public List<Pet> list(int ownerID) {
         List<Pet> pets = new ArrayList<>();
+        final String WHERE = "pet.owner_id=" + ownerID;
 
         try {
-            Cursor cursor = database.query("pet", DatabaseFactory.ClIENT_COLUMNS, null, null, null, null, null);
+            Cursor cursor = database.query("pet", DatabaseFactory.PET_COLUMNS, WHERE, null, null, null, null);
 
             while (cursor.moveToNext()) {
                 Pet pet = new Pet();
                 pet.setId(cursor.getInt(0));
                 pet.setName(cursor.getString(1));
-                pet.setSpecie(cursor.getString(2));
+                pet.setSpecies(cursor.getString(2));
                 pet.setBreed(cursor.getString(3));
                 pet.setOwner(clientDAO.find(cursor.getInt(4)));
                 pets.add(pet);
@@ -73,7 +74,7 @@ public class PetDAO {
             cursor.moveToFirst();
             pet.setId(cursor.getInt(0));
             pet.setName(cursor.getString(1));
-            pet.setSpecie(cursor.getString(2));
+            pet.setSpecies(cursor.getString(2));
             pet.setBreed(cursor.getString(3));
             pet.setOwner(clientDAO.find(cursor.getInt(4)));
 

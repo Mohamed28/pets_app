@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pets.R;
+import com.example.pets.activities.clients.ClientsActivity;
 import com.example.pets.models.Client;
 
 import java.util.List;
@@ -36,7 +37,6 @@ public class ClientListAdapter extends RecyclerView.Adapter<ClientListAdapter.Vi
     @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull ClientListAdapter.ViewHolder holder, int position) {
-
         holder.textName.setText(clients.get(position).getFullName());
         holder.textID.setText(clients.get(position).getId().toString());
         holder.textEmail.setText(clients.get(position).getEmail());
@@ -62,14 +62,23 @@ public class ClientListAdapter extends RecyclerView.Adapter<ClientListAdapter.Vi
             textEmail = itemView.findViewById(R.id.textEmail);
 
             ImageButton imagePets = itemView.findViewById(R.id.imagePets);
-            TextView textPets = itemView.findViewById(R.id.textPets);
+            TextView textPets = itemView.findViewById(R.id.textHeader);
             ImageButton imageCalendar = itemView.findViewById(R.id.imageCalendar);
             TextView textCalendar = itemView.findViewById(R.id.textCalendar);
+
+            imagePets.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(context, "Clicked on Label for Client id:" + clientID, Toast.LENGTH_LONG).show();
+                    ((ClientsActivity) context).pets(view, clientID);
+                }
+            });
 
             textPets.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Toast.makeText(context, "Clicked on Label for Client id:" + clientID, Toast.LENGTH_LONG).show();
+                    ((ClientsActivity) context).pets(view, clientID);
                 }
             });
 
@@ -80,12 +89,6 @@ public class ClientListAdapter extends RecyclerView.Adapter<ClientListAdapter.Vi
                 }
             });
 
-            imagePets.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Toast.makeText(context, "Clicked on Icon for Client id:" + clientID, Toast.LENGTH_LONG).show();
-                }
-            });
 
             imageCalendar.setOnClickListener(new View.OnClickListener() {
                 @Override

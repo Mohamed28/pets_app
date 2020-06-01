@@ -1,16 +1,19 @@
 package com.example.pets.models;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Client implements Serializable {
-
     private Integer id;
     private String name;
     private String surname;
     private String email;
     private long CPF;
+    private List<Pet> pets;
 
     public Client() {
+        this.pets = new ArrayList<>();
     }
 
     public Client(String name, String surname, long CPF, String email) {
@@ -18,6 +21,7 @@ public class Client implements Serializable {
         this.CPF = CPF;
         this.surname = surname;
         this.email = email;
+        this.pets = new ArrayList<>();
     }
 
     public Integer getId() {
@@ -64,4 +68,11 @@ public class Client implements Serializable {
         this.CPF = CPF;
     }
 
+    public List<Pet> getPets() {
+        return pets;
+    }
+
+    public void setPets(List<Pet> pets) {
+        this.pets = pets;
+    }
 }

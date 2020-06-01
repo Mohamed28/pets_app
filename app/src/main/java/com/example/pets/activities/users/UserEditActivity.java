@@ -26,6 +26,8 @@ public class UserEditActivity extends AppCompatActivity {
     private UserDAO userDAO;
     private Spinner spinnerRoles;
 
+    // TODO use DAO to instantiate the currect User, then load the fields and then as sumbitted do update
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,14 +73,13 @@ public class UserEditActivity extends AppCompatActivity {
                     spinnerRoles.getSelectedItemPosition(),
                     checkAdmin.isChecked())
             );
-
             Toast.makeText(this, "Novo funcionário inserido com sucesso!", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, MainMenuActivity.class));
 
         } catch (Exception e) {
             Toast.makeText(this, "Falha ao tentar gravar dados, verifique os dados e tente novamente", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this, UserEditActivity.class));
         }
-        startActivity(new Intent(this, MainMenuActivity.class));
     }
 
     public void back(View view) {
