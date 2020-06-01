@@ -36,9 +36,8 @@ public class PetListAdapter extends RecyclerView.Adapter<PetListAdapter.ViewHold
     @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull PetListAdapter.ViewHolder holder, int position) {
-
         holder.textName.setText(pets.get(position).getName());
-        holder.textSpecies.setText(pets.get(position).getSpecie());
+        holder.textSpecies.setText(pets.get(position).getSpecies());
         holder.petID = pets.get(position).getId();
     }
 
@@ -57,23 +56,6 @@ public class PetListAdapter extends RecyclerView.Adapter<PetListAdapter.ViewHold
             super(itemView);
             textName = itemView.findViewById(R.id.textName);
             textSpecies = itemView.findViewById(R.id.textSpecies);
-
-
-            ImageButton imagePets = itemView.findViewById(R.id.imagePets);
-
-            imagePets.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Toast.makeText(context, "Clicked on Label for Pet id:" + petID, Toast.LENGTH_LONG).show();
-                }
-            });
-
-            textName.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Toast.makeText(context, "Clicked on Label for Pet id:" + petID, Toast.LENGTH_LONG).show();
-                }
-            });
         }
     }
 }

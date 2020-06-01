@@ -29,7 +29,8 @@
 
     <!-- (((PETS))) -->
     <string name="pet">Pet</string>
-    <string name="specie">Espécie</string>
+    <string name="pets">Lista de Pets</string>
+    <string name="species">Espécie</string>
     <string name="breed">Raça</string>
     <string name="owner">Dono</string>
     <string name="new_pet">Novo Pet</string>

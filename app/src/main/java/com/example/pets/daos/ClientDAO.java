@@ -11,7 +11,6 @@ import android.widget.Toast;
 import com.example.pets.daos.seeds.ClientsSeeds;
 import com.example.pets.factories.DatabaseFactory;
 import com.example.pets.models.Client;
-import com.example.pets.models.Client;
 import com.example.pets.utils.Connection;
 
 import java.util.ArrayList;
@@ -67,7 +66,7 @@ public class ClientDAO {
         final String WHERE = "client.id=" + id;
 
         try {
-            Cursor cursor = database.query("client", DatabaseFactory.USER_COLUMNS, WHERE, null, null, null, null);
+            Cursor cursor = database.query("client", DatabaseFactory.ClIENT_COLUMNS, WHERE, null, null, null, null);
             cursor.moveToFirst();
             client.setId(cursor.getInt(0));
             client.setName(cursor.getString(1));
@@ -80,10 +79,6 @@ public class ClientDAO {
             database.close();
             throw new RuntimeException(e);
         }
-    }
-
-    public Client find(long cpf) {
-        return null;
     }
 
     public void update(Client client) {

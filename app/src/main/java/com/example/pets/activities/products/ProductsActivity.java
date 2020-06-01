@@ -3,6 +3,7 @@ package com.example.pets.activities.products;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,8 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pets.R;
 import com.example.pets.activities.MainMenuActivity;
-import com.example.pets.activities.products.ProductNewActivity;
-import com.example.pets.activities.products.ProductShowActivity;
 import com.example.pets.daos.ProductDAO;
 import com.example.pets.models.Product;
 import com.example.pets.utils.ProductListAdapter;
@@ -28,6 +27,9 @@ public class ProductsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.products_activity);
+        TextView textHeader = findViewById(R.id.textHeader);
+        textHeader.setText(R.string.products);
+
 
         productDAO = new ProductDAO(this);
         products = productDAO.list();

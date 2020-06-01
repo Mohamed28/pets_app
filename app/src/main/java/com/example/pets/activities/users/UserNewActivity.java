@@ -3,6 +3,7 @@ package com.example.pets.activities.users;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.SQLException;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -72,14 +73,13 @@ public class UserNewActivity extends AppCompatActivity {
                     spinnerRoles.getSelectedItemPosition(),
                     checkAdmin.isChecked())
             );
-
             Toast.makeText(this, "Novo funcionário inserido com sucesso!", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, UsersActivity.class));
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
             Toast.makeText(this, "Falha ao tentar gravar dados, verifique os dados e tente novamente", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this, UserNewActivity.class));
         }
-        startActivity(new Intent(this, UserNewActivity.class));
     }
 
     public void back(View view) {

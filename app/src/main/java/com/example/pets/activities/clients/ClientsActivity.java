@@ -3,6 +3,7 @@ package com.example.pets.activities.clients;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pets.R;
 import com.example.pets.activities.MainMenuActivity;
+import com.example.pets.activities.pets.PetsActivity;
 import com.example.pets.daos.ClientDAO;
 import com.example.pets.models.Client;
 import com.example.pets.utils.ClientListAdapter;
@@ -18,7 +20,6 @@ import com.example.pets.utils.ClientListAdapter;
 import java.util.List;
 
 public class ClientsActivity extends AppCompatActivity {
-
     private RecyclerView recyclerListClients;
     private ClientDAO clientDAO;
     private List<Client> clients;
@@ -27,6 +28,8 @@ public class ClientsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.clients_activity);
+        TextView textHeader = findViewById(R.id.textHeader);
+        textHeader.setText(R.string.clients);
 
         clientDAO = new ClientDAO(this);
         clients = clientDAO.list();
@@ -56,6 +59,11 @@ public class ClientsActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void pets(View view, int clientID) {
+        Intent intent = new Intent(this, PetsActivity.class);
+        intent.putExtra("clientID", clientID);
+        startActivity(intent);
+    }
 
     public void remove(View view, int clientID) {
         if (clientDAO.delete(clientID)) {

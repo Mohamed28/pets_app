@@ -88,7 +88,7 @@
                     app:srcCompat="@drawable/pets_house" />
 
                 <TextView
-                    android:id="@+id/textPets"
+                    android:id="@+id/textHeader"
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:gravity="center"

@@ -41,7 +41,7 @@
                 android:width="200dp"
                 android:autofillHints="true"
                 android:background="@drawable/edit_rounded_border"
-                android:inputType="textPersonName"
+                android:inputType="textPersonName|textAutoComplete"
                 android:padding="5dp"
                 android:singleLine="true"
                 android:textColor="@color/colorTextPrimary" />
@@ -52,20 +52,20 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:gravity="center"
-                android:text="@string/specie"
+                android:text="@string/species"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/editSpecie"
+                android:id="@+id/editSpecies"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginBottom="25dp"
                 android:width="200dp"
                 android:autofillHints="true"
                 android:background="@drawable/edit_rounded_border"
-                android:inputType="textPersonName"
+                android:inputType="text"
                 android:padding="5dp"
                 android:singleLine="true"
                 android:textColor="@color/colorTextPrimary" />
@@ -89,31 +89,6 @@
                 android:width="200dp"
                 android:autofillHints="true"
                 android:background="@drawable/edit_rounded_border"
-                android:inputType="number"
-                android:padding="5dp"
-                android:singleLine="true"
-                android:textColor="@color/colorTextPrimary" />
-
-            <TextView
-                android:id="@+id/textOwner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:gravity="center"
-                android:text="@string/client"
-                android:textColor="@color/colorPrimary"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/editClient"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginBottom="25dp"
-                android:width="200dp"
-                android:autofillHints="true"
-                android:background="@drawable/edit_rounded_border"
-                android:inputType="textPassword"
                 android:padding="5dp"
                 android:singleLine="true"
                 android:textColor="@color/colorTextPrimary" />

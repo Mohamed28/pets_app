@@ -13,7 +13,6 @@ import com.example.pets.enums.Roles;
 import com.example.pets.models.User;
 
 public class UserShowActivity extends AppCompatActivity {
-
     private User user;
     private UserDAO userDAO;
     TextView textHeader, textShowCPF, textShowPhone, textShowRole;

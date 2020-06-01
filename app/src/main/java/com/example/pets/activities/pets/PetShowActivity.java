@@ -15,7 +15,7 @@ public class PetShowActivity extends AppCompatActivity {
 
     private Pet pet;
     private PetDAO petDAO;
-    TextView textShowName, textShowSpecie, textShowBreed, textShowOwner;
+    TextView textShowName, textShowSpecies, textShowBreed, textShowOwner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,14 +25,12 @@ public class PetShowActivity extends AppCompatActivity {
         pet = petDAO.find(getIntent().getExtras().getInt("id"));
 
         textShowName = findViewById(R.id.textShowName);
-        textShowSpecie = findViewById(R.id.textShowSpecie);
+        textShowSpecies = findViewById(R.id.textShowSpecies);
         textShowBreed = findViewById(R.id.textShowBreed);
-        textShowOwner = findViewById(R.id.textShowOwner);
 
         textShowName.setText(pet.getName());
-        textShowSpecie.setText(String.valueOf(pet.getSpecie()));
+        textShowSpecies.setText(String.valueOf(pet.getSpecies()));
         textShowBreed.setText(String.valueOf(pet.getBreed()));
-        textShowOwner.setText(String.valueOf(pet.getOwner()));
     }
 
     public void back(View view) {

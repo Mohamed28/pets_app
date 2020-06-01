@@ -99,13 +99,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="@string/specie"
+                    android:text="@string/species"
                     android:textColor="@color/colorPrimary"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textShowSpecie"
+                    android:id="@+id/textShowSpecies"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:gravity="center"
@@ -123,23 +123,6 @@
 
                 <TextView
                     android:id="@+id/textShowBreed"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:gravity="center"
-                    android:textColor="@color/colorTextSecondaryDarker" />
-
-                <TextView
-                    android:id="@+id/textOwner"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/owner"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textShowOwner"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:gravity="center"
