@@ -18,7 +18,7 @@ import com.example.pets.R;
 import com.example.pets.daos.ClientDAO;
 
 public class ProductEditActivity extends AppCompatActivity {
-    private EditText editName, editPrice;
+    private EditText editName, editQuantity, editPrice;
     private Spinner spinnerCategory;
     private ClientDAO productDAO;
 
@@ -27,6 +27,7 @@ public class ProductEditActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.product_new_activity);
         editName = findViewById(R.id.editName);
+        editQuantity = findViewById(R.id.editQuantity);
         spinnerCategory = findViewById(R.id.spinnerCategory);
         editPrice = findViewById(R.id.editPrice);
         productDAO = new ClientDAO(this);

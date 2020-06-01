@@ -20,7 +20,7 @@ import com.example.pets.daos.ProductDAO;
 import com.example.pets.models.Product;
 
 public class ProductNewActivity extends AppCompatActivity {
-    private EditText editName, editPrice, editEmail;
+    private EditText editName, editQuantity, editPrice;
     private Spinner spinnerCategory;
     private ProductDAO productDAO;
 
@@ -31,6 +31,7 @@ public class ProductNewActivity extends AppCompatActivity {
         editName = findViewById(R.id.editName);
         spinnerCategory = findViewById(R.id.spinnerCategory);
         editPrice = findViewById(R.id.editPrice);
+        editQuantity = findViewById(R.id.editQuantity);
         productDAO = new ProductDAO(this);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.category_array, android.R.layout.simple_spinner_item);
@@ -52,7 +53,6 @@ public class ProductNewActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
-        
     }
 
     public void save(View view) {
@@ -60,6 +60,7 @@ public class ProductNewActivity extends AppCompatActivity {
             productDAO.insert(new Product(
                     editName.getText().toString(),
                     spinnerCategory.getSelectedItemPosition(),
+                    Integer.parseInt(editQuantity.getText().toString()),
                     Double.parseDouble(editPrice.getText().toString())
             ));
 

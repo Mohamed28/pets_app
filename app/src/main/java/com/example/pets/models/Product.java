@@ -6,13 +6,16 @@ public class Product {
     private int id;
     private String name;
     private int category;
+    private int quantity;
     private double price;
 
-    public Product(){};
+    public Product() {
+    }
 
-    public Product(String name, int category, double price) {
+    public Product(String name, int category, int quantity, double price) {
         this.name = name;
         this.category = category;
+        this.quantity = quantity;
         this.price = price;
     }
 
@@ -40,11 +43,31 @@ public class Product {
         this.category = category;
     }
 
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
     public double getPrice() {
         return price;
     }
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public void retrieve(int value){
+        quantity = quantity - value;
+    }
+
+    public void reclaim(int value){
+        quantity = quantity + value;
+    }
+
+    public String toCurrency(double value){
+        return String.format("R$ %.2f", price);
     }
 }

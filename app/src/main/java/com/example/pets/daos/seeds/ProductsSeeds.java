@@ -12,9 +12,10 @@ public class ProductsSeeds {
 
      public static List<Product> getCollection() {
         List<Product> products = new ArrayList<>();
-        products.add(new Product("Coleira Canina", 1, 15.99));
-        products.add(new Product("Arranhador", 1, 9.99));
-        products.add(new Product("Aquario Pequeno", 1, 5.59));
+        products.add(new Product("Coleira Canina", 1, 20, 15.99));
+        products.add(new Product("Arranhador", 1, 90, 9.99));
+        products.add(new Product("Aquario Pequeno", 1, 60, 5.59));
+        products.add(new Product("Ração", 1, 60, 5.59));
 
         return products;
     }

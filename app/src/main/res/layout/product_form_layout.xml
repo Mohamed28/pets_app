@@ -70,6 +70,30 @@
                 android:spinnerMode="dropdown" />
 
             <TextView
+                android:id="@+id/textQuantity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:text="@string/quantity"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editQuantity"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="25dp"
+                android:width="200dp"
+                android:autofillHints="true"
+                android:background="@drawable/edit_rounded_border"
+                android:inputType="number"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:textColor="@color/colorTextPrimary" />
+
+            <TextView
                 android:id="@+id/textPrice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
